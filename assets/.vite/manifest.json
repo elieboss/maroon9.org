@@ -1,0 +1,162 @@
+{
+  "_VolunteerForm-rRzaDgs-.js": {
+    "file": "chunks/VolunteerForm-rRzaDgs-.js",
+    "name": "VolunteerForm",
+    "imports": [
+      "src/main.jsx",
+      "_api-HCWcA4Sx.js",
+      "_ui-BKDtxvX_.js"
+    ]
+  },
+  "_api-HCWcA4Sx.js": {
+    "file": "chunks/api-HCWcA4Sx.js",
+    "name": "api"
+  },
+  "_ui-BKDtxvX_.js": {
+    "file": "chunks/ui-BKDtxvX_.js",
+    "name": "ui",
+    "imports": [
+      "src/main.jsx",
+      "_api-HCWcA4Sx.js"
+    ]
+  },
+  "src/components/AccountDashboard.jsx": {
+    "file": "chunks/AccountDashboard-SjIOeHVp.js",
+    "name": "AccountDashboard",
+    "src": "src/components/AccountDashboard.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/main.jsx",
+      "_api-HCWcA4Sx.js",
+      "_ui-BKDtxvX_.js",
+      "_VolunteerForm-rRzaDgs-.js"
+    ]
+  },
+  "src/components/AuthForm.jsx": {
+    "file": "chunks/AuthForm-DHsTpyuF.js",
+    "name": "AuthForm",
+    "src": "src/components/AuthForm.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/main.jsx",
+      "_api-HCWcA4Sx.js",
+      "_ui-BKDtxvX_.js"
+    ]
+  },
+  "src/components/ContactForm.jsx": {
+    "file": "chunks/ContactForm-DnPdLadL.js",
+    "name": "ContactForm",
+    "src": "src/components/ContactForm.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/main.jsx",
+      "_api-HCWcA4Sx.js",
+      "_ui-BKDtxvX_.js"
+    ]
+  },
+  "src/components/EventsBoard.jsx": {
+    "file": "chunks/EventsBoard-BDdYHS3c.js",
+    "name": "EventsBoard",
+    "src": "src/components/EventsBoard.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/main.jsx",
+      "_api-HCWcA4Sx.js",
+      "_ui-BKDtxvX_.js",
+      "src/components/Gallery.jsx"
+    ]
+  },
+  "src/components/Gallery.jsx": {
+    "file": "chunks/Gallery-BelITB8I.js",
+    "name": "Gallery",
+    "src": "src/components/Gallery.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/main.jsx"
+    ]
+  },
+  "src/components/NewsPanel.jsx": {
+    "file": "chunks/NewsPanel-BdsFQdFh.js",
+    "name": "NewsPanel",
+    "src": "src/components/NewsPanel.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/main.jsx"
+    ]
+  },
+  "src/components/NewsletterForm.jsx": {
+    "file": "chunks/NewsletterForm-DkxOaF4X.js",
+    "name": "NewsletterForm",
+    "src": "src/components/NewsletterForm.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/main.jsx",
+      "_api-HCWcA4Sx.js",
+      "_ui-BKDtxvX_.js"
+    ]
+  },
+  "src/components/SiteNav.jsx": {
+    "file": "chunks/SiteNav-Bf8I5Ti1.js",
+    "name": "SiteNav",
+    "src": "src/components/SiteNav.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/main.jsx",
+      "_api-HCWcA4Sx.js"
+    ]
+  },
+  "src/components/SponsorMarquee.jsx": {
+    "file": "chunks/SponsorMarquee-trrH7_nL.js",
+    "name": "SponsorMarquee",
+    "src": "src/components/SponsorMarquee.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/main.jsx"
+    ]
+  },
+  "src/components/StaffDashboard.jsx": {
+    "file": "chunks/StaffDashboard-c3XH1E0_.js",
+    "name": "StaffDashboard",
+    "src": "src/components/StaffDashboard.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/main.jsx",
+      "_api-HCWcA4Sx.js",
+      "_ui-BKDtxvX_.js"
+    ]
+  },
+  "src/components/VolunteerSignup.jsx": {
+    "file": "chunks/VolunteerSignup-C_dvOSaK.js",
+    "name": "VolunteerSignup",
+    "src": "src/components/VolunteerSignup.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/main.jsx",
+      "_api-HCWcA4Sx.js",
+      "_ui-BKDtxvX_.js",
+      "_VolunteerForm-rRzaDgs-.js"
+    ]
+  },
+  "src/main.jsx": {
+    "file": "app-DFYUBnaV.js",
+    "name": "main",
+    "src": "src/main.jsx",
+    "isEntry": true,
+    "dynamicImports": [
+      "src/components/SiteNav.jsx",
+      "src/components/Gallery.jsx",
+      "src/components/EventsBoard.jsx",
+      "src/components/ContactForm.jsx",
+      "src/components/SponsorMarquee.jsx",
+      "src/components/NewsPanel.jsx",
+      "src/components/NewsletterForm.jsx",
+      "src/components/AuthForm.jsx",
+      "src/components/VolunteerSignup.jsx",
+      "src/components/AccountDashboard.jsx",
+      "src/components/StaffDashboard.jsx"
+    ],
+    "css": [
+      "app-YjXqzrYy.css"
+    ]
+  }
+}

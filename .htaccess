@@ -1,0 +1,5 @@
+# Block private folders when hosted on Apache (router.php does this for php -S)
+RedirectMatch 404 ^/(data|includes|bin|frontend|node_modules)(/|$)
+RedirectMatch 404 /\.(?!well-known)
+RedirectMatch 404 ^/router\.php$
+DirectoryIndex index.php

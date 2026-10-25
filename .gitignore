@@ -1,0 +1,9 @@
+# Local database (contains accounts and messages)
+data/*.sqlite
+data/*.sqlite-*
+# Email settings (Gmail app password) and local email copies
+includes/mail-config.php
+data/mail-log/
+data/mail.log
+frontend/node_modules/
+.DS_Store
