@@ -44,7 +44,7 @@
         </div>
       </div>
       <div>
-        <img src="images/landingpage.avif" alt="Maroon 9 youth on stage" class="impact__image" />
+        <img src="images/maroon6.png" alt="Maroon 9 youth ensemble in kente-print costumes singing together on stage" class="impact__image" />
       </div>
     </div>
   </section>

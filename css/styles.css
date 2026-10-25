@@ -1688,9 +1688,13 @@ ul {
 
 .video-section .section-body { max-width: 640px; }
 
+/* ~82% of the content width, centered, so the player doesn't overpower the heading */
+.video-section { padding-bottom: 72px; }
+
 .video-frame {
-  margin-top: 32px;
-  max-width: 960px;
+  width: 82%;
+  max-width: 940px;   /* never larger than the old 960px player on wide screens */
+  margin: 24px auto 0;
   aspect-ratio: 16 / 9;
   background: var(--black);
   border-radius: var(--radius);
@@ -1708,6 +1712,8 @@ ul {
 
 @media (max-width: 600px) {
   .section-photo--wide { aspect-ratio: 16 / 10; }
+  .video-section { padding-bottom: 56px; }
+  .video-frame { width: 100%; margin-top: 20px; }
 }
 
 .footer__disclaimer { color: rgba(255, 255, 255, 0.6); line-height: 1.6; }
@@ -2829,4 +2835,41 @@ main [id] { scroll-margin-top: calc(var(--action-bar-h) + 104px); }
 @media (max-width: 900px) {
   .highlight-card { grid-template-columns: 1fr; }
   .highlight-card__body { padding: 26px 22px; }
+}
+
+/* Homepage: "Who We Work For" student portraits */
+.who-we-serve {
+  padding: 84px 0 88px;
+  background:
+    radial-gradient(circle at 15% 0%, rgba(123, 28, 35, 0.5), transparent 45%),
+    radial-gradient(circle at 90% 100%, rgba(232, 160, 32, 0.12), transparent 40%),
+    var(--black);
+  overflow: hidden;
+}
+
+/* Width includes the side padding so the heading lines up with other sections */
+.who-we-serve__inner { max-width: calc(var(--max-width) + 48px); margin: 0 auto 40px; padding: 0 24px; }
+.who-we-serve .section-label { color: var(--gold); }
+.who-we-serve .section-label::before { background: var(--gold); }
+.who-we-serve .section-body { color: rgba(255, 255, 255, 0.75); max-width: 620px; }
+
+/* Fallback (no JavaScript): a simple scrollable strip */
+.people-grid {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding: 0 24px 8px;
+  list-style: none;
+}
+
+.people-grid img,
+.people-row__item img {
+  width: 190px;
+  aspect-ratio: 480 / 538;
+  object-fit: cover;
+  border-radius: 10px;
+}
+@media (max-width: 600px) {
+  .who-we-serve { padding: 64px 0; }
+  .who-we-serve__inner { padding: 0 20px; margin-bottom: 28px; }
 }

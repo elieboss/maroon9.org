@@ -41,6 +41,23 @@
     </div>
   </section>
 
+  <!-- WHO WE WORK FOR (React: PeopleMarquee scrolls the portraits; this grid is the no-JS fallback) -->
+<?php $students = array_map(function ($i) { return "images/people-web/people$i.jpg"; }, range(1, 25)); ?>
+  <section class="who-we-serve" aria-labelledby="who-title">
+    <div class="who-we-serve__inner">
+      <span class="section-label">Our Students</span>
+      <h2 class="section-title section-title--white" id="who-title">Who We Work For</h2>
+      <p class="section-body">The young artists, leaders, and creatives at the heart of everything we do.</p>
+    </div>
+    <div data-island="people-marquee" data-props="<?= island_props(array('photos' => $students)) ?>">
+      <ul class="people-grid" aria-label="Portraits of Maroon 9 students">
+<?php foreach ($students as $src): ?>
+        <li><img src="<?= e($src) ?>" alt="" loading="lazy" /></li>
+<?php endforeach; ?>
+      </ul>
+    </div>
+  </section>
+
   <!-- WHAT WE DO -->
   <section class="programs" id="what-we-do" aria-labelledby="what-we-do-title">
     <div class="programs__inner">

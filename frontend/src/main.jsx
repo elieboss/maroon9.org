@@ -16,6 +16,7 @@ const islands = {
   'events-board': lazy(() => import('./components/EventsBoard.jsx')),
   'contact-form': lazy(() => import('./components/ContactForm.jsx')),
   'sponsor-marquee': lazy(() => import('./components/SponsorMarquee.jsx')),
+  'people-marquee': lazy(() => import('./components/PeopleMarquee.jsx')),
   'news-panel': lazy(() => import('./components/NewsPanel.jsx')),
   'newsletter-form': lazy(() => import('./components/NewsletterForm.jsx')),
   'auth-form': lazy(() => import('./components/AuthForm.jsx')),
