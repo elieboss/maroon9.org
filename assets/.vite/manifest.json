@@ -1,0 +1,172 @@
+{
+  "_VolunteerForm-Fa3WAI5E.js": {
+    "file": "chunks/VolunteerForm-Fa3WAI5E.js",
+    "name": "VolunteerForm",
+    "imports": [
+      "src/main.jsx",
+      "_api-HCWcA4Sx.js",
+      "_ui-DIHEZRty.js"
+    ]
+  },
+  "_api-HCWcA4Sx.js": {
+    "file": "chunks/api-HCWcA4Sx.js",
+    "name": "api"
+  },
+  "_ui-DIHEZRty.js": {
+    "file": "chunks/ui-DIHEZRty.js",
+    "name": "ui",
+    "imports": [
+      "src/main.jsx",
+      "_api-HCWcA4Sx.js"
+    ]
+  },
+  "src/components/AccountDashboard.jsx": {
+    "file": "chunks/AccountDashboard-BafdoQhL.js",
+    "name": "AccountDashboard",
+    "src": "src/components/AccountDashboard.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/main.jsx",
+      "_api-HCWcA4Sx.js",
+      "_ui-DIHEZRty.js",
+      "_VolunteerForm-Fa3WAI5E.js"
+    ]
+  },
+  "src/components/AuthForm.jsx": {
+    "file": "chunks/AuthForm-B1A6Uh7t.js",
+    "name": "AuthForm",
+    "src": "src/components/AuthForm.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/main.jsx",
+      "_api-HCWcA4Sx.js",
+      "_ui-DIHEZRty.js"
+    ]
+  },
+  "src/components/ContactForm.jsx": {
+    "file": "chunks/ContactForm-YeFLFtrW.js",
+    "name": "ContactForm",
+    "src": "src/components/ContactForm.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/main.jsx",
+      "_api-HCWcA4Sx.js",
+      "_ui-DIHEZRty.js"
+    ]
+  },
+  "src/components/EventsBoard.jsx": {
+    "file": "chunks/EventsBoard-BWqNicBY.js",
+    "name": "EventsBoard",
+    "src": "src/components/EventsBoard.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/main.jsx",
+      "_api-HCWcA4Sx.js",
+      "_ui-DIHEZRty.js",
+      "src/components/Gallery.jsx"
+    ]
+  },
+  "src/components/Gallery.jsx": {
+    "file": "chunks/Gallery-MH4yGD9Y.js",
+    "name": "Gallery",
+    "src": "src/components/Gallery.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/main.jsx"
+    ]
+  },
+  "src/components/NewsPanel.jsx": {
+    "file": "chunks/NewsPanel-CyGBfJSl.js",
+    "name": "NewsPanel",
+    "src": "src/components/NewsPanel.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/main.jsx"
+    ]
+  },
+  "src/components/NewsletterForm.jsx": {
+    "file": "chunks/NewsletterForm-Cu_uqef-.js",
+    "name": "NewsletterForm",
+    "src": "src/components/NewsletterForm.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/main.jsx",
+      "_api-HCWcA4Sx.js",
+      "_ui-DIHEZRty.js"
+    ]
+  },
+  "src/components/PeopleMarquee.jsx": {
+    "file": "chunks/PeopleMarquee-CFhU8Kzd.js",
+    "name": "PeopleMarquee",
+    "src": "src/components/PeopleMarquee.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/main.jsx"
+    ]
+  },
+  "src/components/SiteNav.jsx": {
+    "file": "chunks/SiteNav-Ct8h291m.js",
+    "name": "SiteNav",
+    "src": "src/components/SiteNav.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/main.jsx",
+      "_api-HCWcA4Sx.js"
+    ]
+  },
+  "src/components/SponsorMarquee.jsx": {
+    "file": "chunks/SponsorMarquee-B-XSLrIh.js",
+    "name": "SponsorMarquee",
+    "src": "src/components/SponsorMarquee.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/main.jsx"
+    ]
+  },
+  "src/components/StaffDashboard.jsx": {
+    "file": "chunks/StaffDashboard-1Meql1Pb.js",
+    "name": "StaffDashboard",
+    "src": "src/components/StaffDashboard.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/main.jsx",
+      "_api-HCWcA4Sx.js",
+      "_ui-DIHEZRty.js"
+    ]
+  },
+  "src/components/VolunteerSignup.jsx": {
+    "file": "chunks/VolunteerSignup-BkB1lsm0.js",
+    "name": "VolunteerSignup",
+    "src": "src/components/VolunteerSignup.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/main.jsx",
+      "_api-HCWcA4Sx.js",
+      "_ui-DIHEZRty.js",
+      "_VolunteerForm-Fa3WAI5E.js"
+    ]
+  },
+  "src/main.jsx": {
+    "file": "app-B775QCqN.js",
+    "name": "main",
+    "src": "src/main.jsx",
+    "isEntry": true,
+    "dynamicImports": [
+      "src/components/SiteNav.jsx",
+      "src/components/Gallery.jsx",
+      "src/components/EventsBoard.jsx",
+      "src/components/ContactForm.jsx",
+      "src/components/SponsorMarquee.jsx",
+      "src/components/PeopleMarquee.jsx",
+      "src/components/NewsPanel.jsx",
+      "src/components/NewsletterForm.jsx",
+      "src/components/AuthForm.jsx",
+      "src/components/VolunteerSignup.jsx",
+      "src/components/AccountDashboard.jsx",
+      "src/components/StaffDashboard.jsx"
+    ],
+    "css": [
+      "app-BtogQ1Ry.css"
+    ]
+  }
+}

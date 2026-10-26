@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+(function () {
+  var msg = 'This is a preview copy of the Maroon 9 site. Forms, sign-in and email confirmations work on the full site only.';
+  var realFetch = window.fetch;
+  window.fetch = function (input) {
+    var url = String((input && input.url) || input);
+    if (/\/api\/[a-z-]+\.php/.test(url)) {
+      return Promise.resolve(new Response(JSON.stringify({ error: msg }),
+        { status: 503, headers: { 'Content-Type': 'application/json' } }));
+    }
+    return realFetch.apply(this, arguments);
+  };
+  document.addEventListener('submit', function (e) {
+    if ((e.target.getAttribute('method') || '').toLowerCase() === 'post') {
+      e.preventDefault();
+      alert(msg);
+    }
+  }, true);
+})();
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arts Education Services — Maroon 9</title>
+  <meta name="description" content="Page To Stage Arts Education Services — Maroon 9&#039;s professional arts education division and social enterprise, serving schools, districts, and community organizations." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css?v=1792971497" />
+  <link rel="stylesheet" href="assets/app-BtogQ1Ry.css" />
+  <script>document.documentElement.classList.add('js'); window.M9 = {"csrf":"37b139cd1e05642094708c81431f15f9d9b7816d8193282eb79fa7ebd203255c","user":null,"page":"pagetostage.html"};</script>
+  <script type="module" src="assets/app-B775QCqN.js"></script>
+</head>
+<body><div style="background:#2b0a12;color:#f5e6c8;font:500 13px/1.4 'DM Sans',sans-serif;text-align:center;padding:6px 16px">This is a preview copy of the Maroon 9 site. Forms, sign-in and email confirmations work on the full site only.</div>
+<a class="skip-link" href="#main">Skip to main content</a>
+  <!-- ACTION BAR -->
+  <div class="action-bar">
+    <span class="action-bar__tagline">Transforming Lives Through The Arts.</span>
+    <div class="action-bar__links">
+      <a href="kidsactingwithpurpose.html">KAWP</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Log In</a>
+      <a href="give.html" class="highlight">Donate</a>
+    </div>
+  </div>
+
+  <!-- PRIMARY NAVIGATION (React takes this over; this markup is the no-JS fallback) -->
+  <div data-island="site-nav" data-props="{&quot;items&quot;:[{&quot;label&quot;:&quot;Home&quot;,&quot;href&quot;:&quot;index.html&quot;},{&quot;label&quot;:&quot;About&quot;,&quot;href&quot;:&quot;about.html&quot;},{&quot;label&quot;:&quot;Youth Programs&quot;,&quot;href&quot;:&quot;kidsactingwithpurpose.html&quot;,&quot;children&quot;:[{&quot;label&quot;:&quot;Kids Acting With Purpose&quot;,&quot;href&quot;:&quot;kidsactingwithpurpose.html&quot;},{&quot;label&quot;:&quot;Conflict Resolution Through Theatre™&quot;,&quot;href&quot;:&quot;conflictresolutionthroughtheatre.html&quot;}]},{&quot;label&quot;:&quot;The Hub&quot;,&quot;href&quot;:&quot;hub.html&quot;},{&quot;label&quot;:&quot;Arts Education Services&quot;,&quot;href&quot;:&quot;pagetostage.html&quot;},{&quot;label&quot;:&quot;Sickle Cell Stars&quot;,&quot;href&quot;:&quot;sicklecellstars.html&quot;},{&quot;label&quot;:&quot;Events&quot;,&quot;href&quot;:&quot;events.html&quot;},{&quot;label&quot;:&quot;Get Involved&quot;,&quot;href&quot;:&quot;getinvolved.html&quot;},{&quot;label&quot;:&quot;Give&quot;,&quot;href&quot;:&quot;give.html&quot;}],&quot;current&quot;:&quot;pagetostage.html&quot;,&quot;user&quot;:null}">
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav__inner">
+
+      <a href="index.html" class="nav__logo" aria-label="Maroon 9 Home">
+        <img src="images/logo.avif" alt="Maroon 9 Logo" />
+      </a>
+
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="nav__item">
+          <a href="kidsactingwithpurpose.html" class="nav__dropdown-toggle">
+            Youth Programs <svg class="nav__caret" viewBox="0 0 12 12" width="12" height="12" aria-hidden="true" focusable="false"><path d="M2.5 4.25 6 7.75l3.5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <ul class="nav__dropdown">
+            <li><a href="kidsactingwithpurpose.html">Kids Acting With Purpose</a></li>
+            <li><a href="conflictresolutionthroughtheatre.html">Conflict Resolution Through Theatre™</a></li>
+          </ul>
+        </li>
+        <li><a href="hub.html">The Hub</a></li>
+        <li><a href="pagetostage.html" class="active" aria-current="page">Arts Education Services</a></li>
+        <li><a href="sicklecellstars.html">Sickle Cell Stars</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="getinvolved.html">Get Involved</a></li>
+        <li><a href="give.html">Give</a></li>
+      </ul>
+
+    </div>
+  </nav>
+  </div>
+<main id="main">
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" aria-labelledby="page-title">
+    <span class="section-label">Arts Education Services</span>
+    <h1 class="page-hero__title" id="page-title">Page To Stage Arts Education Services</h1>
+    <p class="page-hero__desc">
+      Maroon 9's professional arts education division, serving schools, districts, municipalities, nonprofits, and businesses.
+    </p>
+  </section>
+
+  <!-- INTRO -->
+  <section class="content-section" aria-labelledby="intro-title">
+    <div class="content-section__inner">
+      <span class="section-label">Bringing Purposeful Arts Education Into Schools and Communities</span>
+      <h2 class="section-title" id="intro-title">A Social Enterprise That Reinvests In Our Mission</h2>
+      <div class="story-block" style="margin-left: 0;">
+        <p>
+          <strong>Page To Stage Arts Education Services</strong> is the professional arts education and social enterprise division of Maroon 9.
+        </p>
+        <p>
+          We partner with schools, districts, educators, and community organizations to deliver engaging theatre-based learning experiences designed to strengthen creativity, communication, confidence, and student engagement.
+        </p>
+        <p>
+          <strong>Revenue generated through Page To Stage helps sustain Maroon 9's broader youth development mission</strong>, allowing organizations to receive high-quality arts education services while investing in greater access to the arts for young people.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY THE ARTS? -->
+  <section class="why-arts" aria-labelledby="why-arts-title">
+    <div class="why-arts__opening">
+      <div class="why-arts__opening-inner">
+        <span class="section-label">Why the Arts?</span>
+        <h2 class="visually-hidden" id="why-arts-title">Why the Arts?</h2>
+        <figure class="pull-quote">
+          <blockquote>
+            <p>“The arts are not a frill. The arts are a response to our individuality and our nature, and help to shape our identity.”</p>
+          </blockquote>
+          <figcaption>— Dr. Shirley Brice Heath, <span>Stanford University</span></figcaption>
+        </figure>
+        <p class="why-arts__lead">
+          The arts are a powerful catalyst for academic achievement, personal growth, and community development. Decades of research confirm that sustained engagement in arts education directly supports improved outcomes in core academic areas, particularly literacy.
+        </p>
+      </div>
+    </div>
+
+    <div class="why-arts__body">
+      <div class="content-section__inner">
+
+        <h3 class="why-arts__subhead">Data-Driven Benefits:</h3>
+        <ul class="benefit-grid">
+          <li class="benefit-card">
+            <h4 class="benefit-card__title">Improved Academic Performance</h4>
+            <p>Students involved in the arts are four times more likely to be recognized for academic achievement and three times more likely to win school attendance awards.</p>
+            <p class="benefit-card__source">(Source: Arts Education Partnership)</p>
+          </li>
+          <li class="benefit-card">
+            <h4 class="benefit-card__title">Literacy Development</h4>
+            <p>Arts participation—especially in drama, music, and visual arts—has been shown to significantly enhance vocabulary, reading comprehension, and writing proficiency.</p>
+            <p class="benefit-card__source">(Source: National Endowment for the Arts)</p>
+          </li>
+          <li class="benefit-card">
+            <h4 class="benefit-card__title">Brain Development</h4>
+            <p>Engaging in creative processes stimulates neural pathways that are critical for problem-solving, emotional regulation, and language acquisition.</p>
+          </li>
+          <li class="benefit-card">
+            <h4 class="benefit-card__title">College and Career Readiness</h4>
+            <p>Young people who engage in the arts are more likely to attend college and pursue career paths that require innovation, communication, and critical thinking skills.</p>
+          </li>
+        </ul>
+
+        <h3 class="why-arts__subhead">Equity and Engagement:</h3>
+        <div class="equity">
+          <figure class="pull-quote pull-quote--card">
+            <blockquote>
+              <p>“Every child is an artist. The problem is how to remain an artist once we grow up.”</p>
+            </blockquote>
+            <figcaption>— Pablo Picasso</figcaption>
+          </figure>
+          <p class="equity__text">
+            In underserved communities, access to arts education narrows opportunity gaps and provides students with a safe space to explore identity, build confidence, and improve behavior. Arts-based programs support holistic development and offer alternative avenues for expression that are especially valuable for students facing academic or social challenges.
+          </p>
+        </div>
+
+        <h3 class="why-arts__subhead">The Literacy Connection:</h3>
+        <p class="literacy__intro">Arts instruction, particularly in storytelling, theatre, and poetry, has a profound impact on literacy:</p>
+        <ul class="literacy-list">
+          <li>Students who participate in drama show higher reading comprehension and more confident oral expression.</li>
+          <li>Visual arts encourage interpretation and narrative skills—key components of literacy development.</li>
+          <li>Music education enhances phonological awareness, an essential pre-literacy skill for young learners.</li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MORE ON THE ARTS & DATA (drop-downs use <details>; "Expand all" buttons are added by effects.js) -->
+  <section class="arts-data" aria-labelledby="arts-data-title">
+    <div class="content-section__inner">
+      <span class="section-label">Research &amp; Resources</span>
+      <h2 class="section-title" id="arts-data-title">More on the Arts &amp; Data</h2>
+      <nav class="arts-data__jump" aria-label="Jump to a topic">
+        <a href="#arts-after-school">Why Arts After School</a>
+        <a href="#after-school-data">After School Program Data</a>
+        <a href="#arts-impact">National &amp; Local Impact</a>
+        <a href="#arts-studies">The Studies</a>
+      </nav>
+
+      <div class="data-group" id="arts-after-school">
+        <div class="data-group__head">
+          <div>
+            
+            <h3 class="data-group__title">Why Choose the Arts for Your Child’s After-School Program?</h3>
+          </div>
+          <button type="button" class="text-btn data-group__toggle" data-expand-all="arts-after-school" hidden>Expand all</button>
+        </div>
+        <p class="data-group__intro">Choosing arts-based after-school programs provides children with a unique platform for self-expression, emotional growth, and skill-building that traditional academic or sports programs may not offer. The arts encourage children to explore their creativity, develop critical thinking, and communicate their thoughts and emotions effectively. Studies have shown that consistent engagement in the arts improves academic performance, behavior, and overall mental well-being. Through these programs, children gain confidence and resilience, learning to express themselves constructively, which can translate to improved behavior in and outside of school.</p>
+        <div class="accordion">
+        <details class="accordion__item" id="arts-after-school-1">
+          <summary class="accordion__summary">
+            <span class="accordion__title">The Arts as a Deterrent to Gun Violence</span>
+            <svg class="accordion__icon" viewBox="0 0 12 12" width="14" height="14" aria-hidden="true" focusable="false"><path d="M2.5 4.25 6 7.75l3.5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="accordion__body">
+            <p>After-school arts programs create safe spaces where young people feel valued and understood, providing a positive alternative to the streets and reducing their likelihood of being exposed to or participating in violence. By focusing on team-oriented activities like theater, dance, or music, arts programs foster a sense of belonging and collaboration. When youth feel connected to their peers and supported by mentors, they are less likely to seek belonging in negative environments or get involved in risky activities. These programs also promote emotional health by giving young people a channel to manage and express their emotions, which can help them handle challenges peacefully rather than turning to violence.</p>
+          </div>
+        </details>
+        <details class="accordion__item" id="arts-after-school-2">
+          <summary class="accordion__summary">
+            <span class="accordion__title">Using the Arts in Violence Intervention</span>
+            <svg class="accordion__icon" viewBox="0 0 12 12" width="14" height="14" aria-hidden="true" focusable="false"><path d="M2.5 4.25 6 7.75l3.5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="accordion__body">
+            <p>The arts can also play a key role in violence intervention by helping individuals process trauma, anger, or stress. Art therapy, for instance, is used to help individuals articulate complex emotions they may struggle to express verbally. Programs that incorporate storytelling, drama, and visual arts can empower youth to confront and reframe their experiences in a constructive way. Performance and visual arts projects can be especially impactful, as they allow participants to explore themes of conflict resolution, empathy, and social justice, promoting healing and encouraging positive behavior.</p>
+            <p>Through intentional arts programming, we can help at-risk youth build self-awareness, emotional regulation, and conflict resolution skills, transforming both individuals and communities. By investing in the arts as a channel for growth, we not only provide youth with enriching experiences but also contribute to safer, more peaceful neighborhoods.</p>
+          </div>
+        </details>
+        </div>
+      </div>
+
+      <div class="data-group" id="after-school-data">
+        <div class="data-group__head">
+          <div>
+            
+            <h3 class="data-group__title">After School Program Data</h3>
+          </div>
+          <button type="button" class="text-btn data-group__toggle" data-expand-all="after-school-data" hidden>Expand all</button>
+        </div>
+        <p class="data-group__intro">The Afterschool Alliance provides comprehensive data highlighting the critical role of afterschool programs across the United States. Their research reveals that afterschool programs positively impact youth by improving academic performance, social skills, and overall well-being. Here are some key findings from the Afterschool Alliance's recent data:</p>
+        <div class="accordion">
+        <details class="accordion__item" id="after-school-data-1">
+          <summary class="accordion__summary">
+            <span class="accordion__title">Educational Outcomes</span>
+            <svg class="accordion__icon" viewBox="0 0 12 12" width="14" height="14" aria-hidden="true" focusable="false"><path d="M2.5 4.25 6 7.75l3.5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="accordion__body">
+            <p>Afterschool programs significantly enhance academic success. Students who participate regularly demonstrate improved grades, test scores, and graduation rates. They also show greater interest in STEM fields, as programs increasingly offer hands-on STEM activities that encourage curiosity and innovation.</p>
+          </div>
+        </details>
+        <details class="accordion__item" id="after-school-data-2">
+          <summary class="accordion__summary">
+            <span class="accordion__title">Safety and Crime Reduction</span>
+            <svg class="accordion__icon" viewBox="0 0 12 12" width="14" height="14" aria-hidden="true" focusable="false"><path d="M2.5 4.25 6 7.75l3.5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="accordion__body">
+            <p>Participation in afterschool programs has been linked to reduced juvenile crime rates. Data shows that the hours between 3 p.m. and 6 p.m.—the peak hours for juvenile crime—are when students benefit most from having structured, supervised activities. Programs provide a safe space, keeping youth off the streets and engaged in positive pursuits.</p>
+          </div>
+        </details>
+        <details class="accordion__item" id="after-school-data-3">
+          <summary class="accordion__summary">
+            <span class="accordion__title">Social and Emotional Development</span>
+            <svg class="accordion__icon" viewBox="0 0 12 12" width="14" height="14" aria-hidden="true" focusable="false"><path d="M2.5 4.25 6 7.75l3.5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="accordion__body">
+            <p>Afterschool activities improve social skills and emotional regulation, helping youth develop resilience, empathy, and conflict-resolution abilities. These skills are particularly valuable in reducing violence and aggression, and in fostering healthier peer relationships.</p>
+          </div>
+        </details>
+        <details class="accordion__item" id="after-school-data-4">
+          <summary class="accordion__summary">
+            <span class="accordion__title">Parental and Community Support</span>
+            <svg class="accordion__icon" viewBox="0 0 12 12" width="14" height="14" aria-hidden="true" focusable="false"><path d="M2.5 4.25 6 7.75l3.5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="accordion__body">
+            <p>Afterschool programs offer support for working families, providing peace of mind for parents who know their children are in a safe, enriching environment. Community-based programs also strengthen neighborhood bonds, involving local businesses, schools, and organizations in youth development.</p>
+          </div>
+        </details>
+        <details class="accordion__item" id="after-school-data-5">
+          <summary class="accordion__summary">
+            <span class="accordion__title">Demand for Programs</span>
+            <svg class="accordion__icon" viewBox="0 0 12 12" width="14" height="14" aria-hidden="true" focusable="false"><path d="M2.5 4.25 6 7.75l3.5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="accordion__body">
+            <p>Despite the proven benefits, there is a substantial gap between demand and supply. Afterschool Alliance data indicates that for every child enrolled in an afterschool program, three others are waiting for an available spot. This highlights the pressing need for expanded funding and resources to meet the needs of underserved communities.</p>
+          </div>
+        </details>
+        </div>
+        <p class="data-group__closing">Afterschool programs, such as those offered by Maroon 9, align with these findings by providing critical enrichment, safety, and support that positively impact youth, families, and communities.</p>
+      </div>
+
+      <div class="data-group" id="arts-impact">
+        <div class="data-group__head">
+          <div>
+            
+            <h3 class="data-group__title">Impact of National and Local Arts Organization</h3>
+          </div>
+          <button type="button" class="text-btn data-group__toggle" data-expand-all="arts-impact" hidden>Expand all</button>
+        </div>
+        <p class="data-group__intro">Arts organizations in the United States, including local community-focused programs, play a powerful role in youth development, economic contribution, and social cohesion. Both national and local data underscore the value of arts programs in communities, particularly for youth. Here are some key data points on the impact of arts organizations:</p>
+        <h4 class="data-group__subhead">National Impact of Arts Organizations</h4>
+        <div class="accordion">
+        <details class="accordion__item" id="arts-impact-national-1">
+          <summary class="accordion__summary">
+            <span class="accordion__title">Economic Contribution</span>
+            <svg class="accordion__icon" viewBox="0 0 12 12" width="14" height="14" aria-hidden="true" focusable="false"><path d="M2.5 4.25 6 7.75l3.5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="accordion__body">
+            <p>According to the National Endowment for the Arts (NEA) and the Bureau of Economic Analysis (BEA), the arts sector contributes over $900 billion to the U.S. economy annually, representing 4.3% of the nation’s GDP. This contribution underscores the arts’ economic importance and its ability to provide jobs, stimulate local economies, and attract tourism.</p>
+          </div>
+        </details>
+        <details class="accordion__item" id="arts-impact-national-2">
+          <summary class="accordion__summary">
+            <span class="accordion__title">Youth and Education</span>
+            <svg class="accordion__icon" viewBox="0 0 12 12" width="14" height="14" aria-hidden="true" focusable="false"><path d="M2.5 4.25 6 7.75l3.5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="accordion__body">
+            <p>Research from Americans for the Arts indicates that students involved in the arts are:</p>
+            <ul class="accordion__list">
+              <li>Four times more likely to be recognized for academic achievement.</li>
+              <li>More likely to participate in math and science fairs, preparing them for STEM pathways.</li>
+              <li>More likely to have higher attendance rates, which translates to improved school performance and engagement.</li>
+            </ul>
+            <p>This data aligns with findings from The Arts Education Partnership, which highlights how arts education fosters critical thinking, problem-solving, and social skills.</p>
+          </div>
+        </details>
+        <details class="accordion__item" id="arts-impact-national-3">
+          <summary class="accordion__summary">
+            <span class="accordion__title">Reduced Youth Crime and Violence</span>
+            <svg class="accordion__icon" viewBox="0 0 12 12" width="14" height="14" aria-hidden="true" focusable="false"><path d="M2.5 4.25 6 7.75l3.5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="accordion__body">
+            <p>Data from The Afterschool Alliance shows that arts-based afterschool programs reduce juvenile crime, particularly during the high-risk hours of 3 p.m. to 6 p.m. Programs providing artistic outlets for self-expression offer young people alternative, constructive paths for managing emotions and channeling energy, which can be instrumental in reducing violence.</p>
+          </div>
+        </details>
+        </div>
+        <h4 class="data-group__subhead">Local Impact of Arts Organizations</h4>
+        <div class="accordion">
+        <details class="accordion__item" id="arts-impact-local-1">
+          <summary class="accordion__summary">
+            <span class="accordion__title">Texas-Specific Impact</span>
+            <svg class="accordion__icon" viewBox="0 0 12 12" width="14" height="14" aria-hidden="true" focusable="false"><path d="M2.5 4.25 6 7.75l3.5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="accordion__body">
+            <p>The Texas Cultural Trust reports that the arts generate billions for Texas’s economy annually, with ripple effects reaching local community organizations that serve youth and families. Local arts organizations like Maroon 9 strengthen this economic base by providing youth programming that attracts community investment and support.</p>
+          </div>
+        </details>
+        <details class="accordion__item" id="arts-impact-local-2">
+          <summary class="accordion__summary">
+            <span class="accordion__title">Community Development and Inclusion</span>
+            <svg class="accordion__icon" viewBox="0 0 12 12" width="14" height="14" aria-hidden="true" focusable="false"><path d="M2.5 4.25 6 7.75l3.5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="accordion__body">
+            <p>Local arts initiatives foster inclusivity and provide a sense of belonging for youth. In Fort Worth, community-centered programs have shown to improve local school attendance, engagement, and provide crucial emotional support. The Arts Council of Fort Worth notes that community arts organizations help underserved youth explore creative passions, keeping them engaged and out of harm’s way.</p>
+          </div>
+        </details>
+        <details class="accordion__item" id="arts-impact-local-3">
+          <summary class="accordion__summary">
+            <span class="accordion__title">Increased College and Career Readiness</span>
+            <svg class="accordion__icon" viewBox="0 0 12 12" width="14" height="14" aria-hidden="true" focusable="false"><path d="M2.5 4.25 6 7.75l3.5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="accordion__body">
+            <p>Participation in local arts programs has been linked to increased interest in postsecondary education. Fort Worth arts organizations like Maroon 9 help students explore artistic and technical careers, especially in performing and media arts, increasing their readiness for college and work in these fields. These programs also create pathways for youth to attend historically Black colleges and universities (HBCUs) and enter creative industries.</p>
+          </div>
+        </details>
+        </div>
+        <div class="data-summary">
+          <h4 class="data-summary__title">Summary</h4>
+          <p>Together, national and local data emphasize that arts organizations, especially those focused on youth programming, support academic success, improve mental health, reduce violence, and strengthen economic stability in communities. Programs like those provided by Maroon 9 leverage these benefits by offering young people safe, enriching, and impactful experiences in the arts, contributing to individual growth and broader community resilience.</p>
+        </div>
+      </div>
+
+      <div class="data-group" id="arts-studies">
+        <div class="data-group__head">
+          <div>
+            <span class="section-label">The Data</span>
+            <h3 class="data-group__title">Studies Showing How the Arts Improve Academic Capabilities</h3>
+          </div>
+          <button type="button" class="text-btn data-group__toggle" data-expand-all="arts-studies" hidden>Expand all</button>
+        </div>
+
+        <div class="accordion">
+        <details class="accordion__item" id="arts-studies-1">
+          <summary class="accordion__summary">
+            <span class="accordion__title">1. Arts Education Partnership – Champions of Change (1999)</span>
+            <svg class="accordion__icon" viewBox="0 0 12 12" width="14" height="14" aria-hidden="true" focusable="false"><path d="M2.5 4.25 6 7.75l3.5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="accordion__body">
+            <p>A landmark report sponsored by the U.S. Department of Education and the National Endowment for the Arts.</p>
+            <p class="accordion__label">Key Findings:</p>
+            <ul class="accordion__list">
+              <li>Students involved in the arts outperformed their peers on standardized tests.</li>
+              <li>Low-income students highly engaged in the arts were more likely to attend and succeed in college.</li>
+              <li>Arts participation correlated with better reading and math scores, improved critical thinking, and increased motivation to learn.</li>
+            </ul>
+          </div>
+        </details>
+        <details class="accordion__item" id="arts-studies-2">
+          <summary class="accordion__summary">
+            <span class="accordion__title">2. Critical Evidence: How the Arts Benefit Student Achievement – AEP (2006)</span>
+            <svg class="accordion__icon" viewBox="0 0 12 12" width="14" height="14" aria-hidden="true" focusable="false"><path d="M2.5 4.25 6 7.75l3.5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="accordion__body">
+            <p class="accordion__label">Key Findings:</p>
+            <ul class="accordion__list">
+              <li>Arts learning experiences can boost literacy, numeracy, and overall school engagement.</li>
+              <li>Integration of arts into curriculum improves cognitive development and retention of academic content.</li>
+            </ul>
+          </div>
+        </details>
+        <details class="accordion__item" id="arts-studies-3">
+          <summary class="accordion__summary">
+            <span class="accordion__title">3. National Endowment for the Arts – The Arts and Achievement in At-Risk Youth (2012)</span>
+            <svg class="accordion__icon" viewBox="0 0 12 12" width="14" height="14" aria-hidden="true" focusable="false"><path d="M2.5 4.25 6 7.75l3.5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="accordion__body">
+            <p>Longitudinal study using data from four national databases, including the National Education Longitudinal Study of 1988.</p>
+            <p class="accordion__label">Key Findings:</p>
+            <p>At-risk youth with high arts engagement were:</p>
+            <ul class="accordion__list">
+              <li>4 times more likely to participate in math and science fairs.</li>
+              <li>3 times more likely to win awards for school attendance.</li>
+              <li>2 times more likely to read for pleasure and show stronger writing skills.</li>
+            </ul>
+            <p>These students were also more likely to enroll in post-secondary education.</p>
+          </div>
+        </details>
+        <details class="accordion__item" id="arts-studies-4">
+          <summary class="accordion__summary">
+            <span class="accordion__title">4. ArtsEdSearch – Ongoing</span>
+            <svg class="accordion__icon" viewBox="0 0 12 12" width="14" height="14" aria-hidden="true" focusable="false"><path d="M2.5 4.25 6 7.75l3.5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="accordion__body">
+            <p>A project of the Arts Education Partnership offering a searchable database of over 200 peer-reviewed studies.</p>
+            <p class="accordion__label">Relevant Findings:</p>
+            <ul class="accordion__list">
+              <li>Dance improves spatial reasoning and memory.</li>
+              <li>Theater enhances reading comprehension and empathy.</li>
+              <li>Music improves mathematical ability and executive function.</li>
+            </ul>
+          </div>
+        </details>
+        <details class="accordion__item" id="arts-studies-5">
+          <summary class="accordion__summary">
+            <span class="accordion__title">5. University of Chicago Consortium on School Research – Arts Education and Social-Emotional Learning (2019)</span>
+            <svg class="accordion__icon" viewBox="0 0 12 12" width="14" height="14" aria-hidden="true" focusable="false"><path d="M2.5 4.25 6 7.75l3.5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="accordion__body">
+            <p class="accordion__label">Key Findings:</p>
+            <ul class="accordion__list">
+              <li>Arts programs help develop social-emotional competencies such as self-confidence, collaboration, and perseverance—traits that support academic success.</li>
+              <li>Students in arts-rich schools showed stronger attendance and lower dropout rates.</li>
+            </ul>
+          </div>
+        </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR SERVICES -->
+  <section class="content-section" style="background: #fff;" aria-labelledby="services-title">
+    <div class="content-section__inner">
+      <span class="section-label">What We Offer</span>
+      <h2 class="section-title" id="services-title">Our Services</h2>
+
+      <div class="feature-list">
+        <div class="feature-block">
+          <div class="feature-block__title">Curriculum</div>
+          <div class="feature-block__desc">
+            <p>Our <strong>classroom-ready, theatre-based curriculum</strong> helps educators use the arts to strengthen student engagement, build relationships, and positively impact school and classroom culture. Lessons combine theatre techniques, discussion, collaboration, and creative expression while building toward a culminating <strong>performance or showcase</strong> that gives students an opportunity to demonstrate what they have learned.</p>
+          </div>
+        </div>
+
+        <div class="feature-block">
+          <div class="feature-block__title">Play Catalogue</div>
+          <div class="feature-block__desc">
+            <p>Our growing catalogue features <strong>original 10-minute and one-act plays written by the Maroon 9 writing team</strong>. Plays explore relevant youth, school, and community topics and are designed for use by schools, youth organizations, theatre programs, and community groups.</p>
+          </div>
+          <a href="contact.html" class="feature-block__link">Explore Our Play Catalogue</a>
+        </div>
+
+        <div class="feature-block">
+          <div class="feature-block__title">Educator Professional Development &amp; Coaching</div>
+          <div class="feature-block__desc">
+            <p>We provide <strong>professional development and individualized coaching for fine arts educators</strong> who want to strengthen their programs and build greater community around their departments. Support can include strategies for advocating for arts programs, developing positive relationships with students and parents, preparing for successful performances, strengthening program operations, and effectively managing limited time and resources.</p>
+          </div>
+        </div>
+
+        <div class="feature-block">
+          <div class="feature-block__title">Theatre Workshops &amp; Master Classes</div>
+          <div class="feature-block__desc">
+            <p>Bring theatre-based learning directly to your students or organization through <strong>6- and 8-week sessions, workshops, and master classes</strong> led by experienced theatre professionals and teaching artists. Experiences range from introductory theatre exploration to technique-specific master classes, acting and performance development, and audition preparation. Sessions can be tailored to the experience level and goals of participating youth.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERFORMANCE BOOKINGS -->
+  <section class="content-section" aria-labelledby="bookings-title">
+    <div class="content-section__inner">
+      <span class="section-label">Bring Us to You</span>
+      <h2 class="section-title" id="bookings-title">Performance Bookings</h2>
+      <p class="section-body" style="max-width: 760px;">
+        Bring purpose-driven theatre directly to your school, organization, conference, or community event.
+      </p>
+
+      <div class="feature-list">
+        <div class="feature-block">
+          <div class="feature-block__title">KAWP Traveling Troupe</div>
+          <div class="feature-block__desc">
+            <p>The <strong>KAWP Traveling Troupe</strong> is our youth performance ensemble available for evening, weekend, and summer bookings. Youth performers present original works that explore important issues affecting young people while gaining paid, real-world experience in the creative workforce.</p>
+          </div>
+        </div>
+
+        <div class="feature-block">
+          <div class="feature-block__title">Theatre For Change Ensemble</div>
+          <div class="feature-block__desc">
+            <p>Our developing <strong>Theatre For Change Ensemble</strong> is an adult performance group designed to bring original, youth-centered theatre to schools, community centers, conferences, and special events. Performances use relatable stories to spark conversation around issues impacting young people and their communities.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="section-body" style="max-width: 760px; margin-top: 24px;">
+        Performance bookings should be requested <strong>at least six weeks in advance</strong> to allow adequate time for scheduling, preparation, and production coordination.
+      </p>
+    </div>
+  </section>
+
+  <!-- LET'S WORK TOGETHER -->
+  <section class="content-section" style="background: #fff;" aria-labelledby="together-title">
+    <div class="content-section__inner">
+      <div class="highlight-box">
+        <span class="section-label" style="color: var(--gold);">Let's Work Together</span>
+        <h2 class="section-title" id="together-title">Tell Us What You Need</h2>
+        <p>
+          Tell us what your students, educators, or community need, and we'll help identify the right Page To Stage experience.
+        </p>
+        <div class="btn-group">
+          <a href="https://wkf.ms/3TZ30RO" target="_blank" rel="noopener" class="btn btn-maroon">Request Arts Education Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner" aria-label="Call to Action">
+    <div class="cta-banner__inner">
+      <h2 class="cta-banner__title">Want to Book a Service?</h2>
+      <p class="cta-banner__desc">
+        Reach out and we'll walk you through what Page To Stage can offer your school or organization.
+      </p>
+      <div class="cta-banner__actions">
+        <a href="contact.html" class="btn btn-maroon">Contact Us</a>
+        <a href="about.html" class="btn btn-outline">Learn About Us</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+
+      <!-- NEWSLETTER (React: NewsletterForm submits in place; this form works without JavaScript) -->
+      <div class="newsletter" id="newsletter">
+        <div class="newsletter__intro">
+          <h2 class="newsletter__title" id="newsletter-title">Newsletter Sign-Up</h2>
+          <p class="newsletter__desc">Stay updated with news, programs and events.</p>
+        </div>
+        <div data-island="newsletter-form" data-props="{&quot;email&quot;:&quot;&quot;}">
+          <form class="newsletter__form" action="newsletter-signup.php" method="post" aria-labelledby="newsletter-title">
+            <input type="hidden" name="csrf" value="37b139cd1e05642094708c81431f15f9d9b7816d8193282eb79fa7ebd203255c" />
+            <input type="hidden" name="back" value="pagetostage.html" />
+            <div class="newsletter__row">
+              <label class="visually-hidden" for="newsletter-email">Email address</label>
+              <input type="email" id="newsletter-email" name="email" placeholder="Your email address" autocomplete="email" value="" required />
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </div>
+            <label class="newsletter__consent">
+              <input type="checkbox" name="consent" value="1" required />
+              <span>Yes, send me the Maroon 9 newsletter. I can unsubscribe anytime.</span>
+            </label>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer__top">
+
+        <div>
+          <div class="footer__brand-name">Maroon 9</div>
+          <p class="footer__brand-desc">
+            Preparing Fort Worth youth for life beyond the stage through creative arts, mentorship, conflict resolution, and sickle cell disease advocacy since 2016.
+          </p>
+          <div class="footer__col-title">Follow Us</div>
+          <ul class="footer__social">
+            <li>
+              <a href="https://www.facebook.com/maroon9communityenrichment" class="footer__social-link footer__social-link--facebook" target="_blank" rel="noopener" aria-label="Maroon 9 on Facebook (opens in a new tab)">
+                <svg class="social-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M13.4 21v-7.6h2.6l.4-3H13.4V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.7v3h2.6V21z"/></svg>              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/maroon9communityenrichment/" class="footer__social-link footer__social-link--instagram" target="_blank" rel="noopener" aria-label="Maroon 9 on Instagram (opens in a new tab)">
+                <svg class="social-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.25" fill="currentColor"/></svg>              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/company/maroon9communityenrichment/" class="footer__social-link footer__social-link--linkedin" target="_blank" rel="noopener" aria-label="Maroon 9 on LinkedIn (opens in a new tab)">
+                <svg class="social-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect x="4" y="9.2" width="3.3" height="10.8" fill="currentColor"/><circle cx="5.65" cy="5.6" r="1.95" fill="currentColor"/><path fill="currentColor" d="M10 9.2h3.15v1.5h.05c.45-.85 1.5-1.7 3.1-1.7 3.3 0 3.9 2.15 3.9 5V20h-3.3v-5.3c0-1.25 0-2.9-1.75-2.9s-2 1.37-2 2.8V20H10z"/></svg>              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/@maroon9" class="footer__social-link footer__social-link--youtube" target="_blank" rel="noopener" aria-label="Maroon 9 on YouTube (opens in a new tab)">
+                <svg class="social-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" d="M21.6 7.2a2.5 2.5 0 0 0-1.77-1.77C18.27 5 12 5 12 5s-6.27 0-7.83.43A2.5 2.5 0 0 0 2.4 7.2C2 8.76 2 12 2 12s0 3.24.4 4.8a2.5 2.5 0 0 0 1.77 1.77C5.73 19 12 19 12 19s6.27 0 7.83-.43a2.5 2.5 0 0 0 1.77-1.77C22 15.24 22 12 22 12s0-3.24-.4-4.8zM10 15.1V8.9l5.3 3.1z"/></svg>              </a>
+            </li>
+            <li>
+              <a href="https://www.eventbrite.com/e/bone-soup-a-kwanzaa-story-by-kids-acting-with-purpose-tickets-1012893470637?aff=oddtdtcreator#organizer-card" class="footer__social-link footer__social-link--eventbrite" target="_blank" rel="noopener" aria-label="Maroon 9 on Eventbrite (opens in a new tab)">
+                <svg class="social-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" d="M6.5 12h11a5.5 5.5 0 1 0-1.6 3.9"/></svg>              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Navigate</div>
+          <ul class="footer__col-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html#impact">Impact</a></li>
+            <li><a href="hub.html">The Hub</a></li>
+            <li><a href="events.html">Events</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Programs</div>
+          <ul class="footer__col-links">
+            <li><a href="kidsactingwithpurpose.html">Kids Acting With Purpose</a></li>
+            <li><a href="conflictresolutionthroughtheatre.html">Conflict Resolution Through Theatre&trade;</a></li>
+            <li><a href="pagetostage.html">Arts Education Services</a></li>
+            <li><a href="sicklecellstars.html">Sickle Cell Stars</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Latest News</div>
+          <ul class="footer__col-links">
+            <li><a href="https://www.maroon9.org/post/when-culture-meets-cowtown-bone-soup-a-kwanzaa-story-2024" target="_blank" rel="noopener">When Culture Meets Cowtown</a></li>
+            <li><a href="https://www.maroon9.org/post/celebrating-courage-and-resilience-harriet-take-my-hand-and-follow-me" target="_blank" rel="noopener">Celebrating Courage and Resilience</a></li>
+            <li><a href="https://www.maroon9.org/post/empowering-young-creators-theatre-arts-and-media-arts-camp-2024" target="_blank" rel="noopener">Empowering Young Creators</a></li>
+            <li><a href="https://www.maroon9.org/post/a-journey-of-inspiration-and-empowerment-the-stand-up-documentary-project" target="_blank" rel="noopener">A Journey of Inspiration and Empowerment</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Get Involved</div>
+          <ul class="footer__col-links">
+            <li><a href="getinvolved.html#volunteer">Volunteer</a></li>
+            <li><a href="getinvolved.html">Partner With Us</a></li>
+            <li><a href="give.html">Give</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="staff-login.html">Staff Login</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 Maroon 9 Community Enrichment Organization. All rights reserved.</span>
+      </div>
+      <p class="footer__disclaimer">
+        <a href="https://catalog.uta.edu/coursedescriptions/ctec/" target="_blank" rel="noopener">
+          This website was created by Elie Bossombo in collaboration with the Communication Technology Department at UTA. It was created as a class project for CTEC 4350 — Web Communication Design and Development III at The University of Texas at Arlington and is intended for educational purposes only.
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- LATEST NEWS: React (NewsPanel) adds a "Latest News" tab that opens a side panel -->
+  <div data-island="news-panel" data-props="{&quot;articles&quot;:[{&quot;title&quot;:&quot;When Culture Meets Cowtown: Bone Soup: A Kwanzaa Story 2024&quot;,&quot;href&quot;:&quot;https://www.maroon9.org/post/when-culture-meets-cowtown-bone-soup-a-kwanzaa-story-2024&quot;,&quot;image&quot;:&quot;images/When Culture Meets Cowtown.avif&quot;,&quot;tag&quot;:&quot;Production&quot;},{&quot;title&quot;:&quot;Celebrating Courage and Resilience: Harriet: Take My Hand and Follow Me&quot;,&quot;href&quot;:&quot;https://www.maroon9.org/post/celebrating-courage-and-resilience-harriet-take-my-hand-and-follow-me&quot;,&quot;image&quot;:&quot;images/Courage and Resilience- Harriet.avif&quot;,&quot;tag&quot;:&quot;Production&quot;},{&quot;title&quot;:&quot;Empowering Young Creators: Theatre Arts and Media Arts Camp 2024&quot;,&quot;href&quot;:&quot;https://www.maroon9.org/post/empowering-young-creators-theatre-arts-and-media-arts-camp-2024&quot;,&quot;image&quot;:&quot;images/Empowering Young Creators.webp&quot;,&quot;tag&quot;:&quot;Camp&quot;},{&quot;title&quot;:&quot;A Journey of Inspiration and Empowerment: The Stand Up Documentary Project&quot;,&quot;href&quot;:&quot;https://www.maroon9.org/post/a-journey-of-inspiration-and-empowerment-the-stand-up-documentary-project&quot;,&quot;image&quot;:&quot;images/Journey of Inspiration and Empowerment.webp&quot;,&quot;tag&quot;:&quot;Documentary&quot;}]}"></div>
+
+</body>
+</html>

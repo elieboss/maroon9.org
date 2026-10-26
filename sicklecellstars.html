@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+(function () {
+  var msg = 'This is a preview copy of the Maroon 9 site. Forms, sign-in and email confirmations work on the full site only.';
+  var realFetch = window.fetch;
+  window.fetch = function (input) {
+    var url = String((input && input.url) || input);
+    if (/\/api\/[a-z-]+\.php/.test(url)) {
+      return Promise.resolve(new Response(JSON.stringify({ error: msg }),
+        { status: 503, headers: { 'Content-Type': 'application/json' } }));
+    }
+    return realFetch.apply(this, arguments);
+  };
+  document.addEventListener('submit', function (e) {
+    if ((e.target.getAttribute('method') || '').toLowerCase() === 'post') {
+      e.preventDefault();
+      alert(msg);
+    }
+  }, true);
+})();
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sickle Cell Stars — Maroon 9</title>
+  <meta name="description" content="Maroon9 Sickle Cell Stars® empowers and celebrates youth living with Sickle Cell Disease through care, creativity, and celebration." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css?v=1792971497" />
+  <link rel="stylesheet" href="assets/app-BtogQ1Ry.css" />
+  <script>document.documentElement.classList.add('js'); window.M9 = {"csrf":"5e15aa3fc4a070518bedfc884c3ce5669ac995c192d20d33e956559976db42c5","user":null,"page":"sicklecellstars.html"};</script>
+  <script type="module" src="assets/app-B775QCqN.js"></script>
+</head>
+<body><div style="background:#2b0a12;color:#f5e6c8;font:500 13px/1.4 'DM Sans',sans-serif;text-align:center;padding:6px 16px">This is a preview copy of the Maroon 9 site. Forms, sign-in and email confirmations work on the full site only.</div>
+<a class="skip-link" href="#main">Skip to main content</a>
+  <!-- ACTION BAR -->
+  <div class="action-bar">
+    <span class="action-bar__tagline">Transforming Lives Through The Arts.</span>
+    <div class="action-bar__links">
+      <a href="kidsactingwithpurpose.html">KAWP</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Log In</a>
+      <a href="give.html" class="highlight">Donate</a>
+    </div>
+  </div>
+
+  <!-- PRIMARY NAVIGATION (React takes this over; this markup is the no-JS fallback) -->
+  <div data-island="site-nav" data-props="{&quot;items&quot;:[{&quot;label&quot;:&quot;Home&quot;,&quot;href&quot;:&quot;index.html&quot;},{&quot;label&quot;:&quot;About&quot;,&quot;href&quot;:&quot;about.html&quot;},{&quot;label&quot;:&quot;Youth Programs&quot;,&quot;href&quot;:&quot;kidsactingwithpurpose.html&quot;,&quot;children&quot;:[{&quot;label&quot;:&quot;Kids Acting With Purpose&quot;,&quot;href&quot;:&quot;kidsactingwithpurpose.html&quot;},{&quot;label&quot;:&quot;Conflict Resolution Through Theatre™&quot;,&quot;href&quot;:&quot;conflictresolutionthroughtheatre.html&quot;}]},{&quot;label&quot;:&quot;The Hub&quot;,&quot;href&quot;:&quot;hub.html&quot;},{&quot;label&quot;:&quot;Arts Education Services&quot;,&quot;href&quot;:&quot;pagetostage.html&quot;},{&quot;label&quot;:&quot;Sickle Cell Stars&quot;,&quot;href&quot;:&quot;sicklecellstars.html&quot;},{&quot;label&quot;:&quot;Events&quot;,&quot;href&quot;:&quot;events.html&quot;},{&quot;label&quot;:&quot;Get Involved&quot;,&quot;href&quot;:&quot;getinvolved.html&quot;},{&quot;label&quot;:&quot;Give&quot;,&quot;href&quot;:&quot;give.html&quot;}],&quot;current&quot;:&quot;sicklecellstars.html&quot;,&quot;user&quot;:null}">
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav__inner">
+
+      <a href="index.html" class="nav__logo" aria-label="Maroon 9 Home">
+        <img src="images/logo.avif" alt="Maroon 9 Logo" />
+      </a>
+
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="nav__item">
+          <a href="kidsactingwithpurpose.html" class="nav__dropdown-toggle">
+            Youth Programs <svg class="nav__caret" viewBox="0 0 12 12" width="12" height="12" aria-hidden="true" focusable="false"><path d="M2.5 4.25 6 7.75l3.5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <ul class="nav__dropdown">
+            <li><a href="kidsactingwithpurpose.html">Kids Acting With Purpose</a></li>
+            <li><a href="conflictresolutionthroughtheatre.html">Conflict Resolution Through Theatre™</a></li>
+          </ul>
+        </li>
+        <li><a href="hub.html">The Hub</a></li>
+        <li><a href="pagetostage.html">Arts Education Services</a></li>
+        <li><a href="sicklecellstars.html" class="active" aria-current="page">Sickle Cell Stars</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="getinvolved.html">Get Involved</a></li>
+        <li><a href="give.html">Give</a></li>
+      </ul>
+
+    </div>
+  </nav>
+  </div>
+<main id="main">
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" aria-labelledby="page-title">
+    <span class="section-label">Care. Creativity. Celebration.</span>
+    <h1 class="page-hero__title" id="page-title">Sickle Cell Stars&reg;</h1>
+    <p class="page-hero__desc">
+      Maroon9 Sickle Cell Stars&reg; is our signature sickle cell initiative created to empower and celebrate young people living with Sickle Cell Disease while increasing awareness and strengthening connections among families and the community.
+    </p>
+  </section>
+
+  <!-- WHY IT'S PERSONAL -->
+  <section class="content-section" aria-labelledby="story-title">
+    <div class="content-section__inner">
+      <span class="section-label">A Personal Mission</span>
+      <h2 class="section-title" id="story-title">Sickle Cell Advocacy Is Personal to Maroon 9</h2>
+      <p class="section-body" style="max-width: 760px;">
+        Our organization was founded in remembrance of our founder's brother, who lived with Sickle Cell Disease and found joy and purpose through his involvement in arts and entertainment. His legacy reminds us of the power creativity can have in helping someone see beyond their circumstances.
+      </p>
+      <div class="btn-group">
+        <a href="https://wkf.ms/4rc1Q0r" target="_blank" rel="noopener" class="btn btn-maroon">Register a Child</a>
+        <a href="https://www.paypal.com/donate/?hosted_button_id=DDC45UMX6LFBG" target="_blank" rel="noopener" class="btn btn-outline" style="color: var(--maroon); border-color: var(--maroon);">Support the Initiative</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCD ADVOCACY THROUGH THE ARTS (drop-downs use <details>: keyboard-friendly, no JavaScript needed) -->
+  <section class="content-section scd-advocacy" aria-labelledby="advocacy-title">
+    <div class="content-section__inner">
+      <span class="section-label">Our Advocacy</span>
+      <h2 class="section-title" id="advocacy-title">Sickle Cell Disease Advocacy through the Arts</h2>
+      <p class="section-body scd-advocacy__intro">At Maroon 9 Community Enrichment Organization, advocacy for Sickle Cell Disease (SCD) is central to our mission, blending awareness with the power of the arts to reach, educate, and inspire our community. Founded in memory of Michael Patterson, brother of Vice President and Founder Cynthia Banks, Maroon 9 is dedicated to honoring his life and raising awareness of Sickle Cell Disease. Michael lived with SCD until his passing at age 49, and through his legacy, we strive to educate others and provide resources for those impacted by this under-recognized condition.</p>
+
+      <div class="accordion">
+        <details class="accordion__item" id="scd-1">
+          <summary class="accordion__summary">
+            <span class="accordion__title">Understanding Sickle Cell Disease</span>
+            <svg class="accordion__icon" viewBox="0 0 12 12" width="14" height="14" aria-hidden="true" focusable="false"><path d="M2.5 4.25 6 7.75l3.5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="accordion__body">
+            <p>Sickle Cell Disease is an inherited blood disorder affecting the shape of red blood cells. Unlike round, flexible cells, those with SCD are sickle-shaped, causing them to clump together, blocking blood flow, and resulting in intense pain, fatigue, organ damage, and heightened risk of infection. Sickle Cell Disease disproportionately affects African American, Hispanic, and other minority communities, yet it is often underfunded and misunderstood, both in public and medical arenas.</p>
+          </div>
+        </details>
+        <details class="accordion__item" id="scd-2">
+          <summary class="accordion__summary">
+            <span class="accordion__title">Advocacy through the Arts</span>
+            <svg class="accordion__icon" viewBox="0 0 12 12" width="14" height="14" aria-hidden="true" focusable="false"><path d="M2.5 4.25 6 7.75l3.5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="accordion__body">
+            <p>Recognizing that the arts offer a powerful platform for connection and storytelling, Maroon 9 has made it a priority to integrate creative expression into our Sickle Cell advocacy work. Through partnerships with local artists, performers, and youth, we utilize art as a bridge to foster understanding, reduce stigma, and bring attention to Sickle Cell Disease. Our youth-focused programs include plays, performances, and workshops that incorporate themes of resilience, health, and the real-life impacts of SCD. By using art as a medium, we engage audiences emotionally and educate them on the realities of SCD in a way that statistics alone cannot convey.</p>
+            <p>For example, our performing arts programs give youth affected by SCD or touched by it within their communities the opportunity to tell stories, act, dance, and create visual art that represents their experiences or those of loved ones. These art forms make complex health issues more accessible to audiences, helping to cultivate empathy and awareness in a way that traditional advocacy efforts often cannot. Through performances, visual displays, and spoken word, we celebrate the strength of SCD warriors, humanizing the challenges they face and bringing their experiences to the forefront of public consciousness.</p>
+          </div>
+        </details>
+        <details class="accordion__item" id="scd-3">
+          <summary class="accordion__summary">
+            <span class="accordion__title">Providing Support and Resources</span>
+            <svg class="accordion__icon" viewBox="0 0 12 12" width="14" height="14" aria-hidden="true" focusable="false"><path d="M2.5 4.25 6 7.75l3.5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="accordion__body">
+            <p>Beyond awareness, Maroon 9 provides scholarships, financial support, and community resources to individuals and families affected by SCD. Each year, in September—Sickle Cell Awareness Month—we integrate maroon, the color of the SCD awareness ribbon, into all events, including community art shows, performance nights, and educational forums. Our advocacy efforts are especially focused on funding for treatment, increasing healthcare access, and addressing the emotional and financial impacts of living with Sickle Cell Disease.</p>
+          </div>
+        </details>
+        <details class="accordion__item" id="scd-4">
+          <summary class="accordion__summary">
+            <span class="accordion__title">Creating a Legacy of Hope through Art</span>
+            <svg class="accordion__icon" viewBox="0 0 12 12" width="14" height="14" aria-hidden="true" focusable="false"><path d="M2.5 4.25 6 7.75l3.5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="accordion__body">
+            <p>By merging SCD advocacy with the arts, Maroon 9 fosters a supportive environment where individuals affected by the disease can express their stories and find community. We believe that every performance, artwork, and act of creative expression strengthens the movement to end the stigma and silence surrounding SCD. Art transforms our message, celebrating lives, educating new audiences, and rallying the community to support research, resources, and a brighter future for SCD warriors. Through Michael Patterson’s legacy, we remain steadfast in this mission, using the arts as a voice for change and a tool for hope in the fight against Sickle Cell Disease.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGISTRY -->
+  <section class="content-section" style="background: #fff;" aria-labelledby="registry-title">
+    <div class="content-section__inner">
+      <span class="section-label">Launching This Year</span>
+      <h2 class="section-title" id="registry-title">Tarrant County Sickle Cell Youth Registry</h2>
+      <div class="story-block" style="margin-left: 0;">
+        <p>
+          We are launching a registry for Tarrant County youth living with Sickle Cell Disease to help us better identify, connect with, celebrate, and support local youth and their families.
+        </p>
+        <p>
+          Our goal is simple: <strong>empower youth with Sickle Cell Disease through care, creativity, and celebration.</strong>
+        </p>
+        <p>
+          Each quarter, Maroon 9 will select and celebrate a local young person living with Sickle Cell Disease as a <strong>Sickle Cell Star&reg;</strong>, recognizing their courage, individuality, interests, talents, and story.
+        </p>
+      </div>
+      <div class="btn-group">
+        <a href="https://wkf.ms/4rc1Q0r" target="_blank" rel="noopener" class="btn btn-maroon">Register Your Child</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AWARENESS -->
+  <section class="content-section" aria-labelledby="awareness-title">
+    <div class="content-section__inner">
+      <div class="highlight-box">
+        <span class="section-label" style="color: var(--gold);">Get Involved</span>
+        <h2 class="section-title" id="awareness-title">Increase Awareness. Celebrate Youth. Support Families.</h2>
+        <p>
+          Throughout the year, Maroon 9 will engage the community through sickle cell awareness activities, partnerships, education, storytelling, and opportunities to support youth and families.
+        </p>
+        <div class="link-row link-row--light">
+          <a href="https://wkf.ms/4rc1Q0r" target="_blank" rel="noopener">Register a Child</a>
+          <a href="https://forms.monday.com/forms/054afb28cf58134c16be669bc9fe9b8a?r=use1&partner+network=&community+partner+form=" target="_blank" rel="noopener">Become a Partner</a>
+          <a href="https://www.paypal.com/donate/?hosted_button_id=DDC45UMX6LFBG" target="_blank" rel="noopener">Support Sickle Cell Stars&reg;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner" aria-label="Call to Action">
+    <div class="cta-banner__inner">
+      <h2 class="cta-banner__title">Know a Family We Should Meet?</h2>
+      <p class="cta-banner__desc">
+        Reach out and we'll share how your family, school, or organization can be part of Sickle Cell Stars&reg;.
+      </p>
+      <div class="cta-banner__actions">
+        <a href="contact.html" class="btn btn-maroon">Contact Us</a>
+        <a href="about.html" class="btn btn-outline">Learn About Us</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+
+      <!-- NEWSLETTER (React: NewsletterForm submits in place; this form works without JavaScript) -->
+      <div class="newsletter" id="newsletter">
+        <div class="newsletter__intro">
+          <h2 class="newsletter__title" id="newsletter-title">Newsletter Sign-Up</h2>
+          <p class="newsletter__desc">Stay updated with news, programs and events.</p>
+        </div>
+        <div data-island="newsletter-form" data-props="{&quot;email&quot;:&quot;&quot;}">
+          <form class="newsletter__form" action="newsletter-signup.php" method="post" aria-labelledby="newsletter-title">
+            <input type="hidden" name="csrf" value="5e15aa3fc4a070518bedfc884c3ce5669ac995c192d20d33e956559976db42c5" />
+            <input type="hidden" name="back" value="sicklecellstars.html" />
+            <div class="newsletter__row">
+              <label class="visually-hidden" for="newsletter-email">Email address</label>
+              <input type="email" id="newsletter-email" name="email" placeholder="Your email address" autocomplete="email" value="" required />
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </div>
+            <label class="newsletter__consent">
+              <input type="checkbox" name="consent" value="1" required />
+              <span>Yes, send me the Maroon 9 newsletter. I can unsubscribe anytime.</span>
+            </label>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer__top">
+
+        <div>
+          <div class="footer__brand-name">Maroon 9</div>
+          <p class="footer__brand-desc">
+            Preparing Fort Worth youth for life beyond the stage through creative arts, mentorship, conflict resolution, and sickle cell disease advocacy since 2016.
+          </p>
+          <div class="footer__col-title">Follow Us</div>
+          <ul class="footer__social">
+            <li>
+              <a href="https://www.facebook.com/maroon9communityenrichment" class="footer__social-link footer__social-link--facebook" target="_blank" rel="noopener" aria-label="Maroon 9 on Facebook (opens in a new tab)">
+                <svg class="social-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M13.4 21v-7.6h2.6l.4-3H13.4V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.7v3h2.6V21z"/></svg>              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/maroon9communityenrichment/" class="footer__social-link footer__social-link--instagram" target="_blank" rel="noopener" aria-label="Maroon 9 on Instagram (opens in a new tab)">
+                <svg class="social-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.25" fill="currentColor"/></svg>              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/company/maroon9communityenrichment/" class="footer__social-link footer__social-link--linkedin" target="_blank" rel="noopener" aria-label="Maroon 9 on LinkedIn (opens in a new tab)">
+                <svg class="social-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect x="4" y="9.2" width="3.3" height="10.8" fill="currentColor"/><circle cx="5.65" cy="5.6" r="1.95" fill="currentColor"/><path fill="currentColor" d="M10 9.2h3.15v1.5h.05c.45-.85 1.5-1.7 3.1-1.7 3.3 0 3.9 2.15 3.9 5V20h-3.3v-5.3c0-1.25 0-2.9-1.75-2.9s-2 1.37-2 2.8V20H10z"/></svg>              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/@maroon9" class="footer__social-link footer__social-link--youtube" target="_blank" rel="noopener" aria-label="Maroon 9 on YouTube (opens in a new tab)">
+                <svg class="social-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" d="M21.6 7.2a2.5 2.5 0 0 0-1.77-1.77C18.27 5 12 5 12 5s-6.27 0-7.83.43A2.5 2.5 0 0 0 2.4 7.2C2 8.76 2 12 2 12s0 3.24.4 4.8a2.5 2.5 0 0 0 1.77 1.77C5.73 19 12 19 12 19s6.27 0 7.83-.43a2.5 2.5 0 0 0 1.77-1.77C22 15.24 22 12 22 12s0-3.24-.4-4.8zM10 15.1V8.9l5.3 3.1z"/></svg>              </a>
+            </li>
+            <li>
+              <a href="https://www.eventbrite.com/e/bone-soup-a-kwanzaa-story-by-kids-acting-with-purpose-tickets-1012893470637?aff=oddtdtcreator#organizer-card" class="footer__social-link footer__social-link--eventbrite" target="_blank" rel="noopener" aria-label="Maroon 9 on Eventbrite (opens in a new tab)">
+                <svg class="social-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" d="M6.5 12h11a5.5 5.5 0 1 0-1.6 3.9"/></svg>              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Navigate</div>
+          <ul class="footer__col-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html#impact">Impact</a></li>
+            <li><a href="hub.html">The Hub</a></li>
+            <li><a href="events.html">Events</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Programs</div>
+          <ul class="footer__col-links">
+            <li><a href="kidsactingwithpurpose.html">Kids Acting With Purpose</a></li>
+            <li><a href="conflictresolutionthroughtheatre.html">Conflict Resolution Through Theatre&trade;</a></li>
+            <li><a href="pagetostage.html">Arts Education Services</a></li>
+            <li><a href="sicklecellstars.html">Sickle Cell Stars</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Latest News</div>
+          <ul class="footer__col-links">
+            <li><a href="https://www.maroon9.org/post/when-culture-meets-cowtown-bone-soup-a-kwanzaa-story-2024" target="_blank" rel="noopener">When Culture Meets Cowtown</a></li>
+            <li><a href="https://www.maroon9.org/post/celebrating-courage-and-resilience-harriet-take-my-hand-and-follow-me" target="_blank" rel="noopener">Celebrating Courage and Resilience</a></li>
+            <li><a href="https://www.maroon9.org/post/empowering-young-creators-theatre-arts-and-media-arts-camp-2024" target="_blank" rel="noopener">Empowering Young Creators</a></li>
+            <li><a href="https://www.maroon9.org/post/a-journey-of-inspiration-and-empowerment-the-stand-up-documentary-project" target="_blank" rel="noopener">A Journey of Inspiration and Empowerment</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Get Involved</div>
+          <ul class="footer__col-links">
+            <li><a href="getinvolved.html#volunteer">Volunteer</a></li>
+            <li><a href="getinvolved.html">Partner With Us</a></li>
+            <li><a href="give.html">Give</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="staff-login.html">Staff Login</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 Maroon 9 Community Enrichment Organization. All rights reserved.</span>
+      </div>
+      <p class="footer__disclaimer">
+        <a href="https://catalog.uta.edu/coursedescriptions/ctec/" target="_blank" rel="noopener">
+          This website was created by Elie Bossombo in collaboration with the Communication Technology Department at UTA. It was created as a class project for CTEC 4350 — Web Communication Design and Development III at The University of Texas at Arlington and is intended for educational purposes only.
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- LATEST NEWS: React (NewsPanel) adds a "Latest News" tab that opens a side panel -->
+  <div data-island="news-panel" data-props="{&quot;articles&quot;:[{&quot;title&quot;:&quot;When Culture Meets Cowtown: Bone Soup: A Kwanzaa Story 2024&quot;,&quot;href&quot;:&quot;https://www.maroon9.org/post/when-culture-meets-cowtown-bone-soup-a-kwanzaa-story-2024&quot;,&quot;image&quot;:&quot;images/When Culture Meets Cowtown.avif&quot;,&quot;tag&quot;:&quot;Production&quot;},{&quot;title&quot;:&quot;Celebrating Courage and Resilience: Harriet: Take My Hand and Follow Me&quot;,&quot;href&quot;:&quot;https://www.maroon9.org/post/celebrating-courage-and-resilience-harriet-take-my-hand-and-follow-me&quot;,&quot;image&quot;:&quot;images/Courage and Resilience- Harriet.avif&quot;,&quot;tag&quot;:&quot;Production&quot;},{&quot;title&quot;:&quot;Empowering Young Creators: Theatre Arts and Media Arts Camp 2024&quot;,&quot;href&quot;:&quot;https://www.maroon9.org/post/empowering-young-creators-theatre-arts-and-media-arts-camp-2024&quot;,&quot;image&quot;:&quot;images/Empowering Young Creators.webp&quot;,&quot;tag&quot;:&quot;Camp&quot;},{&quot;title&quot;:&quot;A Journey of Inspiration and Empowerment: The Stand Up Documentary Project&quot;,&quot;href&quot;:&quot;https://www.maroon9.org/post/a-journey-of-inspiration-and-empowerment-the-stand-up-documentary-project&quot;,&quot;image&quot;:&quot;images/Journey of Inspiration and Empowerment.webp&quot;,&quot;tag&quot;:&quot;Documentary&quot;}]}"></div>
+
+</body>
+</html>

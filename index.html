@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+(function () {
+  var msg = 'This is a preview copy of the Maroon 9 site. Forms, sign-in and email confirmations work on the full site only.';
+  var realFetch = window.fetch;
+  window.fetch = function (input) {
+    var url = String((input && input.url) || input);
+    if (/\/api\/[a-z-]+\.php/.test(url)) {
+      return Promise.resolve(new Response(JSON.stringify({ error: msg }),
+        { status: 503, headers: { 'Content-Type': 'application/json' } }));
+    }
+    return realFetch.apply(this, arguments);
+  };
+  document.addEventListener('submit', function (e) {
+    if ((e.target.getAttribute('method') || '').toLowerCase() === 'post') {
+      e.preventDefault();
+      alert(msg);
+    }
+  }, true);
+})();
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maroon 9 Community Enrichment Organization</title>
+  <meta name="description" content="Maroon 9 prepares Fort Worth youth for life beyond the stage through theatre-based learning, conflict resolution, arts education, and sickle cell advocacy." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css?v=1792971497" />
+  <link rel="stylesheet" href="assets/app-BtogQ1Ry.css" />
+  <script>document.documentElement.classList.add('js'); window.M9 = {"csrf":"d24d61e979b1cc4e8cb708e94e194edd51ff40e9b0c93e2b604f5074e6048b49","user":null,"page":"index.html"};</script>
+  <script type="module" src="assets/app-B775QCqN.js"></script>
+</head>
+<body><div style="background:#2b0a12;color:#f5e6c8;font:500 13px/1.4 'DM Sans',sans-serif;text-align:center;padding:6px 16px">This is a preview copy of the Maroon 9 site. Forms, sign-in and email confirmations work on the full site only.</div>
+<a class="skip-link" href="#main">Skip to main content</a>
+  <!-- ACTION BAR -->
+  <div class="action-bar">
+    <span class="action-bar__tagline">Transforming Lives Through The Arts.</span>
+    <div class="action-bar__links">
+      <a href="kidsactingwithpurpose.html">KAWP</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Log In</a>
+      <a href="give.html" class="highlight">Donate</a>
+    </div>
+  </div>
+
+  <!-- PRIMARY NAVIGATION (React takes this over; this markup is the no-JS fallback) -->
+  <div data-island="site-nav" data-props="{&quot;items&quot;:[{&quot;label&quot;:&quot;Home&quot;,&quot;href&quot;:&quot;index.html&quot;},{&quot;label&quot;:&quot;About&quot;,&quot;href&quot;:&quot;about.html&quot;},{&quot;label&quot;:&quot;Youth Programs&quot;,&quot;href&quot;:&quot;kidsactingwithpurpose.html&quot;,&quot;children&quot;:[{&quot;label&quot;:&quot;Kids Acting With Purpose&quot;,&quot;href&quot;:&quot;kidsactingwithpurpose.html&quot;},{&quot;label&quot;:&quot;Conflict Resolution Through Theatre™&quot;,&quot;href&quot;:&quot;conflictresolutionthroughtheatre.html&quot;}]},{&quot;label&quot;:&quot;The Hub&quot;,&quot;href&quot;:&quot;hub.html&quot;},{&quot;label&quot;:&quot;Arts Education Services&quot;,&quot;href&quot;:&quot;pagetostage.html&quot;},{&quot;label&quot;:&quot;Sickle Cell Stars&quot;,&quot;href&quot;:&quot;sicklecellstars.html&quot;},{&quot;label&quot;:&quot;Events&quot;,&quot;href&quot;:&quot;events.html&quot;},{&quot;label&quot;:&quot;Get Involved&quot;,&quot;href&quot;:&quot;getinvolved.html&quot;},{&quot;label&quot;:&quot;Give&quot;,&quot;href&quot;:&quot;give.html&quot;}],&quot;current&quot;:&quot;index.html&quot;,&quot;user&quot;:null}">
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav__inner">
+
+      <a href="index.html" class="nav__logo" aria-label="Maroon 9 Home">
+        <img src="images/logo.avif" alt="Maroon 9 Logo" />
+      </a>
+
+      <ul class="nav__links">
+        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="nav__item">
+          <a href="kidsactingwithpurpose.html" class="nav__dropdown-toggle">
+            Youth Programs <svg class="nav__caret" viewBox="0 0 12 12" width="12" height="12" aria-hidden="true" focusable="false"><path d="M2.5 4.25 6 7.75l3.5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <ul class="nav__dropdown">
+            <li><a href="kidsactingwithpurpose.html">Kids Acting With Purpose</a></li>
+            <li><a href="conflictresolutionthroughtheatre.html">Conflict Resolution Through Theatre™</a></li>
+          </ul>
+        </li>
+        <li><a href="hub.html">The Hub</a></li>
+        <li><a href="pagetostage.html">Arts Education Services</a></li>
+        <li><a href="sicklecellstars.html">Sickle Cell Stars</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="getinvolved.html">Get Involved</a></li>
+        <li><a href="give.html">Give</a></li>
+      </ul>
+
+    </div>
+  </nav>
+  </div>
+<main id="main">
+
+  <!-- HERO SECTION -->
+  <section class="hero" aria-label="Hero">
+    <div class="hero__bg" role="img" aria-label="Youth performing on stage"></div>
+    <div class="hero__content">
+      <span class="hero__tag">Fort Worth, TX &middot; Youth Arts &amp; Advocacy</span>
+      <h1 class="hero__title">Preparing Youth for Life Beyond the Stage</h1>
+      <p class="hero__desc">
+        Maroon 9 is a <strong>Tarrant County, Texas-based nonprofit organization</strong> that inspires, empowers, and develops youth through the transformative power of the arts. Through theatre-based learning, youth development, conflict resolution, creative workforce exposure, and community engagement, we create opportunities for young people to discover their voice, build confidence, develop leadership skills, explore creative careers, and prepare for their future.
+      </p>
+      <p class="hero__desc">
+        <strong>Our work extends beyond the stage.</strong> We use theatre and creativity as tools to strengthen youth, connect learning to real-world opportunities, and build stronger families, schools, and communities.
+      </p>
+      <div class="hero__actions">
+        <a href="kidsactingwithpurpose.html" class="btn btn-primary">Explore Our Programs</a>
+        <a href="events.html" class="btn btn-outline">Upcoming Events</a>
+        <a href="give.html" class="btn btn-outline">Give</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEET MAROON 9 (VIDEO) -->
+  <section class="content-section video-section" id="meet-maroon-9" aria-labelledby="video-title">
+    <div class="content-section__inner">
+      <span class="section-label">Watch</span>
+      <h2 class="section-title" id="video-title">Meet Maroon 9</h2>
+      <p class="section-body">Building community, one program at a time. Hear from the youth and families who make Maroon 9 what it is.</p>
+      <div class="video-frame">
+        <video controls playsinline preload="none" poster="images/maroon9-intro-poster.jpg" aria-describedby="video-title">
+          <source src="images/Maroon9%20(1).mp4" type="video/mp4" />
+          Your browser can't play this video. <a href="images/Maroon9%20(1).mp4">Download the Meet Maroon 9 video</a>.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE WORK FOR (React: PeopleMarquee scrolls the portraits; this grid is the no-JS fallback) -->
+  <section class="who-we-serve" aria-labelledby="who-title">
+    <div class="who-we-serve__inner">
+      <span class="section-label">Our Students</span>
+      <h2 class="section-title section-title--white" id="who-title">Who We Work For</h2>
+      <p class="section-body">The young artists, leaders, and creatives at the heart of everything we do.</p>
+    </div>
+    <div data-island="people-marquee" data-props="{&quot;photos&quot;:[&quot;images/people-web/people1.jpg&quot;,&quot;images/people-web/people2.jpg&quot;,&quot;images/people-web/people3.jpg&quot;,&quot;images/people-web/people4.jpg&quot;,&quot;images/people-web/people5.jpg&quot;,&quot;images/people-web/people6.jpg&quot;,&quot;images/people-web/people7.jpg&quot;,&quot;images/people-web/people8.jpg&quot;,&quot;images/people-web/people9.jpg&quot;,&quot;images/people-web/people10.jpg&quot;,&quot;images/people-web/people11.jpg&quot;,&quot;images/people-web/people12.jpg&quot;,&quot;images/people-web/people13.jpg&quot;,&quot;images/people-web/people14.jpg&quot;,&quot;images/people-web/people15.jpg&quot;,&quot;images/people-web/people16.jpg&quot;,&quot;images/people-web/people17.jpg&quot;,&quot;images/people-web/people18.jpg&quot;,&quot;images/people-web/people19.jpg&quot;,&quot;images/people-web/people20.jpg&quot;,&quot;images/people-web/people21.jpg&quot;,&quot;images/people-web/people22.jpg&quot;,&quot;images/people-web/people23.jpg&quot;,&quot;images/people-web/people24.jpg&quot;,&quot;images/people-web/people25.jpg&quot;]}">
+      <ul class="people-grid" aria-label="Portraits of Maroon 9 students">
+        <li><img src="images/people-web/people1.jpg" alt="" loading="lazy" /></li>
+        <li><img src="images/people-web/people2.jpg" alt="" loading="lazy" /></li>
+        <li><img src="images/people-web/people3.jpg" alt="" loading="lazy" /></li>
+        <li><img src="images/people-web/people4.jpg" alt="" loading="lazy" /></li>
+        <li><img src="images/people-web/people5.jpg" alt="" loading="lazy" /></li>
+        <li><img src="images/people-web/people6.jpg" alt="" loading="lazy" /></li>
+        <li><img src="images/people-web/people7.jpg" alt="" loading="lazy" /></li>
+        <li><img src="images/people-web/people8.jpg" alt="" loading="lazy" /></li>
+        <li><img src="images/people-web/people9.jpg" alt="" loading="lazy" /></li>
+        <li><img src="images/people-web/people10.jpg" alt="" loading="lazy" /></li>
+        <li><img src="images/people-web/people11.jpg" alt="" loading="lazy" /></li>
+        <li><img src="images/people-web/people12.jpg" alt="" loading="lazy" /></li>
+        <li><img src="images/people-web/people13.jpg" alt="" loading="lazy" /></li>
+        <li><img src="images/people-web/people14.jpg" alt="" loading="lazy" /></li>
+        <li><img src="images/people-web/people15.jpg" alt="" loading="lazy" /></li>
+        <li><img src="images/people-web/people16.jpg" alt="" loading="lazy" /></li>
+        <li><img src="images/people-web/people17.jpg" alt="" loading="lazy" /></li>
+        <li><img src="images/people-web/people18.jpg" alt="" loading="lazy" /></li>
+        <li><img src="images/people-web/people19.jpg" alt="" loading="lazy" /></li>
+        <li><img src="images/people-web/people20.jpg" alt="" loading="lazy" /></li>
+        <li><img src="images/people-web/people21.jpg" alt="" loading="lazy" /></li>
+        <li><img src="images/people-web/people22.jpg" alt="" loading="lazy" /></li>
+        <li><img src="images/people-web/people23.jpg" alt="" loading="lazy" /></li>
+        <li><img src="images/people-web/people24.jpg" alt="" loading="lazy" /></li>
+        <li><img src="images/people-web/people25.jpg" alt="" loading="lazy" /></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WHAT WE DO -->
+  <section class="programs" id="what-we-do" aria-labelledby="what-we-do-title">
+    <div class="programs__inner">
+
+      <div class="programs__header">
+        <div>
+          <span class="section-label">How We Show Up</span>
+          <h2 class="section-title" id="what-we-do-title">What We Do</h2>
+        </div>
+      </div>
+
+      <div class="feature-list">
+
+        <div class="feature-block">
+          <div class="feature-block__title">Youth Development Through the Arts</div>
+          <div class="feature-block__desc">
+            <p>Maroon 9 provides <strong>year-round community theatre programs for youth ages 5&ndash;17</strong> throughout Dallas&ndash;Fort Worth, often at no cost through partnerships with schools, districts, community centers, and local organizations.</p>
+            <p>Our signature <strong>Kids Acting With Purpose (KAWP)</strong> program takes youth beyond theatre training through performances, field trips, mentorship, creative workforce exploration, and paid opportunities&mdash;building confidence, leadership, and skills for life beyond the stage.</p>
+          </div>
+          <a href="kidsactingwithpurpose.html" class="feature-block__link">Explore KAWP</a>
+        </div>
+
+        <div class="feature-block">
+          <div class="feature-block__title">Conflict Resolution Through Theatre&trade;</div>
+          <div class="feature-block__desc">
+            <p>Our signature theatre-based curriculum equips youth with practical tools to navigate conflict safely and responsibly. Through the <strong>Know Your W.O.R.T.H. framework</strong>, real-life stories, role-playing, and interactive theatre, participants learn five safe, nonviolent conflict de-escalation strategies while strengthening communication, decision-making, and problem-solving skills.</p>
+          </div>
+          <a href="conflictresolutionthroughtheatre.html" class="feature-block__link">Learn More</a>
+        </div>
+
+        <div class="feature-block">
+          <div class="feature-block__title">Arts Education Services</div>
+          <div class="feature-block__desc">
+            <p>Through <strong>Page To Stage Arts Education Services</strong>, our social enterprise, we provide schools and community organizations with curriculum, professional development, theatre workshops and master classes, plays, and performance booking services. <strong>Revenue generated through Page To Stage is reinvested into Maroon 9&rsquo;s mission</strong>, helping expand access to youth arts programming and opportunities throughout the community.</p>
+          </div>
+          <a href="pagetostage.html" class="feature-block__link">See Our Services</a>
+        </div>
+
+        <div class="feature-block">
+          <div class="feature-block__title">Sickle Cell Advocacy</div>
+          <div class="feature-block__desc">
+            <p><strong>Maroon9 Sickle Cell Stars&reg;</strong> empowers youth living with Sickle Cell Disease through care, creativity, and celebration while increasing community awareness and connecting families to support.</p>
+          </div>
+          <a href="sicklecellstars.html" class="feature-block__link">Meet Sickle Cell Stars</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR FUTURE HOME TEASER -->
+  <section class="about" id="future-home" aria-labelledby="future-home-title">
+    <div class="about__inner">
+      <div class="about__image-wrap">
+        <img src="images/thehub.jpg" alt="Rendering of the future Maroon 9 Youth Arts &amp; Creative Workforce Hub at dusk, with string lights, rooftop terraces and a youth arts mural on its side wall" class="about__image about__image--landscape" />
+        <div class="about__image-badge">
+          <strong>Coming</strong>
+          Soon
+        </div>
+      </div>
+      <div>
+        <span class="section-label">More Than a Building</span>
+        <h2 class="section-title section-title--white" id="future-home-title">We&rsquo;re Building Our Future Home</h2>
+        <p class="section-body">
+          Maroon 9 is working toward the development of <strong>The Maroon9 Youth Arts &amp; Creative Workforce Hub</strong>, our vision for a permanent youth arts and creative workforce facility where young people can create, perform, learn, lead, and prepare for creative careers.
+        </p>
+        <a href="hub.html" class="btn btn-primary">Explore The Hub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BE PART OF THE IMPACT -->
+  <section class="cta-banner" aria-label="Call to Action">
+    <div class="cta-banner__inner">
+      <h2 class="cta-banner__title">Be Part of the Impact</h2>
+      <p class="cta-banner__desc">
+        Whether you participate in a program, attend an event, partner with us, volunteer, or make a financial contribution, there is a place for you in the Maroon 9 community.
+      </p>
+      <div class="cta-banner__actions">
+        <a href="getinvolved.html" class="btn btn-maroon">Get Involved</a>
+        <a href="give.html" class="btn btn-outline">Give</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+
+      <!-- NEWSLETTER (React: NewsletterForm submits in place; this form works without JavaScript) -->
+      <div class="newsletter" id="newsletter">
+        <div class="newsletter__intro">
+          <h2 class="newsletter__title" id="newsletter-title">Newsletter Sign-Up</h2>
+          <p class="newsletter__desc">Stay updated with news, programs and events.</p>
+        </div>
+        <div data-island="newsletter-form" data-props="{&quot;email&quot;:&quot;&quot;}">
+          <form class="newsletter__form" action="newsletter-signup.php" method="post" aria-labelledby="newsletter-title">
+            <input type="hidden" name="csrf" value="d24d61e979b1cc4e8cb708e94e194edd51ff40e9b0c93e2b604f5074e6048b49" />
+            <input type="hidden" name="back" value="index.html" />
+            <div class="newsletter__row">
+              <label class="visually-hidden" for="newsletter-email">Email address</label>
+              <input type="email" id="newsletter-email" name="email" placeholder="Your email address" autocomplete="email" value="" required />
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </div>
+            <label class="newsletter__consent">
+              <input type="checkbox" name="consent" value="1" required />
+              <span>Yes, send me the Maroon 9 newsletter. I can unsubscribe anytime.</span>
+            </label>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer__top">
+
+        <div>
+          <div class="footer__brand-name">Maroon 9</div>
+          <p class="footer__brand-desc">
+            Preparing Fort Worth youth for life beyond the stage through creative arts, mentorship, conflict resolution, and sickle cell disease advocacy since 2016.
+          </p>
+          <div class="footer__col-title">Follow Us</div>
+          <ul class="footer__social">
+            <li>
+              <a href="https://www.facebook.com/maroon9communityenrichment" class="footer__social-link footer__social-link--facebook" target="_blank" rel="noopener" aria-label="Maroon 9 on Facebook (opens in a new tab)">
+                <svg class="social-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M13.4 21v-7.6h2.6l.4-3H13.4V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.7v3h2.6V21z"/></svg>              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/maroon9communityenrichment/" class="footer__social-link footer__social-link--instagram" target="_blank" rel="noopener" aria-label="Maroon 9 on Instagram (opens in a new tab)">
+                <svg class="social-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.25" fill="currentColor"/></svg>              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/company/maroon9communityenrichment/" class="footer__social-link footer__social-link--linkedin" target="_blank" rel="noopener" aria-label="Maroon 9 on LinkedIn (opens in a new tab)">
+                <svg class="social-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect x="4" y="9.2" width="3.3" height="10.8" fill="currentColor"/><circle cx="5.65" cy="5.6" r="1.95" fill="currentColor"/><path fill="currentColor" d="M10 9.2h3.15v1.5h.05c.45-.85 1.5-1.7 3.1-1.7 3.3 0 3.9 2.15 3.9 5V20h-3.3v-5.3c0-1.25 0-2.9-1.75-2.9s-2 1.37-2 2.8V20H10z"/></svg>              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/@maroon9" class="footer__social-link footer__social-link--youtube" target="_blank" rel="noopener" aria-label="Maroon 9 on YouTube (opens in a new tab)">
+                <svg class="social-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" d="M21.6 7.2a2.5 2.5 0 0 0-1.77-1.77C18.27 5 12 5 12 5s-6.27 0-7.83.43A2.5 2.5 0 0 0 2.4 7.2C2 8.76 2 12 2 12s0 3.24.4 4.8a2.5 2.5 0 0 0 1.77 1.77C5.73 19 12 19 12 19s6.27 0 7.83-.43a2.5 2.5 0 0 0 1.77-1.77C22 15.24 22 12 22 12s0-3.24-.4-4.8zM10 15.1V8.9l5.3 3.1z"/></svg>              </a>
+            </li>
+            <li>
+              <a href="https://www.eventbrite.com/e/bone-soup-a-kwanzaa-story-by-kids-acting-with-purpose-tickets-1012893470637?aff=oddtdtcreator#organizer-card" class="footer__social-link footer__social-link--eventbrite" target="_blank" rel="noopener" aria-label="Maroon 9 on Eventbrite (opens in a new tab)">
+                <svg class="social-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" d="M6.5 12h11a5.5 5.5 0 1 0-1.6 3.9"/></svg>              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Navigate</div>
+          <ul class="footer__col-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html#impact">Impact</a></li>
+            <li><a href="hub.html">The Hub</a></li>
+            <li><a href="events.html">Events</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Programs</div>
+          <ul class="footer__col-links">
+            <li><a href="kidsactingwithpurpose.html">Kids Acting With Purpose</a></li>
+            <li><a href="conflictresolutionthroughtheatre.html">Conflict Resolution Through Theatre&trade;</a></li>
+            <li><a href="pagetostage.html">Arts Education Services</a></li>
+            <li><a href="sicklecellstars.html">Sickle Cell Stars</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Latest News</div>
+          <ul class="footer__col-links">
+            <li><a href="https://www.maroon9.org/post/when-culture-meets-cowtown-bone-soup-a-kwanzaa-story-2024" target="_blank" rel="noopener">When Culture Meets Cowtown</a></li>
+            <li><a href="https://www.maroon9.org/post/celebrating-courage-and-resilience-harriet-take-my-hand-and-follow-me" target="_blank" rel="noopener">Celebrating Courage and Resilience</a></li>
+            <li><a href="https://www.maroon9.org/post/empowering-young-creators-theatre-arts-and-media-arts-camp-2024" target="_blank" rel="noopener">Empowering Young Creators</a></li>
+            <li><a href="https://www.maroon9.org/post/a-journey-of-inspiration-and-empowerment-the-stand-up-documentary-project" target="_blank" rel="noopener">A Journey of Inspiration and Empowerment</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Get Involved</div>
+          <ul class="footer__col-links">
+            <li><a href="getinvolved.html#volunteer">Volunteer</a></li>
+            <li><a href="getinvolved.html">Partner With Us</a></li>
+            <li><a href="give.html">Give</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="staff-login.html">Staff Login</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 Maroon 9 Community Enrichment Organization. All rights reserved.</span>
+      </div>
+      <p class="footer__disclaimer">
+        <a href="https://catalog.uta.edu/coursedescriptions/ctec/" target="_blank" rel="noopener">
+          This website was created by Elie Bossombo in collaboration with the Communication Technology Department at UTA. It was created as a class project for CTEC 4350 — Web Communication Design and Development III at The University of Texas at Arlington and is intended for educational purposes only.
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- LATEST NEWS: React (NewsPanel) adds a "Latest News" tab that opens a side panel -->
+  <div data-island="news-panel" data-props="{&quot;articles&quot;:[{&quot;title&quot;:&quot;When Culture Meets Cowtown: Bone Soup: A Kwanzaa Story 2024&quot;,&quot;href&quot;:&quot;https://www.maroon9.org/post/when-culture-meets-cowtown-bone-soup-a-kwanzaa-story-2024&quot;,&quot;image&quot;:&quot;images/When Culture Meets Cowtown.avif&quot;,&quot;tag&quot;:&quot;Production&quot;},{&quot;title&quot;:&quot;Celebrating Courage and Resilience: Harriet: Take My Hand and Follow Me&quot;,&quot;href&quot;:&quot;https://www.maroon9.org/post/celebrating-courage-and-resilience-harriet-take-my-hand-and-follow-me&quot;,&quot;image&quot;:&quot;images/Courage and Resilience- Harriet.avif&quot;,&quot;tag&quot;:&quot;Production&quot;},{&quot;title&quot;:&quot;Empowering Young Creators: Theatre Arts and Media Arts Camp 2024&quot;,&quot;href&quot;:&quot;https://www.maroon9.org/post/empowering-young-creators-theatre-arts-and-media-arts-camp-2024&quot;,&quot;image&quot;:&quot;images/Empowering Young Creators.webp&quot;,&quot;tag&quot;:&quot;Camp&quot;},{&quot;title&quot;:&quot;A Journey of Inspiration and Empowerment: The Stand Up Documentary Project&quot;,&quot;href&quot;:&quot;https://www.maroon9.org/post/a-journey-of-inspiration-and-empowerment-the-stand-up-documentary-project&quot;,&quot;image&quot;:&quot;images/Journey of Inspiration and Empowerment.webp&quot;,&quot;tag&quot;:&quot;Documentary&quot;}]}"></div>
+
+</body>
+</html>

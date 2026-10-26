@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+(function () {
+  var msg = 'This is a preview copy of the Maroon 9 site. Forms, sign-in and email confirmations work on the full site only.';
+  var realFetch = window.fetch;
+  window.fetch = function (input) {
+    var url = String((input && input.url) || input);
+    if (/\/api\/[a-z-]+\.php/.test(url)) {
+      return Promise.resolve(new Response(JSON.stringify({ error: msg }),
+        { status: 503, headers: { 'Content-Type': 'application/json' } }));
+    }
+    return realFetch.apply(this, arguments);
+  };
+  document.addEventListener('submit', function (e) {
+    if ((e.target.getAttribute('method') || '').toLowerCase() === 'post') {
+      e.preventDefault();
+      alert(msg);
+    }
+  }, true);
+})();
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Maroon 9</title>
+  <meta name="description" content="Maroon 9&#039;s mission, vision, story, core values, leadership, and impact." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css?v=1792971497" />
+  <link rel="stylesheet" href="assets/app-BtogQ1Ry.css" />
+  <script>document.documentElement.classList.add('js'); window.M9 = {"csrf":"75b272051a34d4181c362530cbfc234506f52a3b55db9e45c4ee8b585d615443","user":null,"page":"about.html"};</script>
+  <script type="module" src="assets/app-B775QCqN.js"></script>
+</head>
+<body><div style="background:#2b0a12;color:#f5e6c8;font:500 13px/1.4 'DM Sans',sans-serif;text-align:center;padding:6px 16px">This is a preview copy of the Maroon 9 site. Forms, sign-in and email confirmations work on the full site only.</div>
+<a class="skip-link" href="#main">Skip to main content</a>
+  <!-- ACTION BAR -->
+  <div class="action-bar">
+    <span class="action-bar__tagline">Transforming Lives Through The Arts.</span>
+    <div class="action-bar__links">
+      <a href="kidsactingwithpurpose.html">KAWP</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Log In</a>
+      <a href="give.html" class="highlight">Donate</a>
+    </div>
+  </div>
+
+  <!-- PRIMARY NAVIGATION (React takes this over; this markup is the no-JS fallback) -->
+  <div data-island="site-nav" data-props="{&quot;items&quot;:[{&quot;label&quot;:&quot;Home&quot;,&quot;href&quot;:&quot;index.html&quot;},{&quot;label&quot;:&quot;About&quot;,&quot;href&quot;:&quot;about.html&quot;},{&quot;label&quot;:&quot;Youth Programs&quot;,&quot;href&quot;:&quot;kidsactingwithpurpose.html&quot;,&quot;children&quot;:[{&quot;label&quot;:&quot;Kids Acting With Purpose&quot;,&quot;href&quot;:&quot;kidsactingwithpurpose.html&quot;},{&quot;label&quot;:&quot;Conflict Resolution Through Theatre™&quot;,&quot;href&quot;:&quot;conflictresolutionthroughtheatre.html&quot;}]},{&quot;label&quot;:&quot;The Hub&quot;,&quot;href&quot;:&quot;hub.html&quot;},{&quot;label&quot;:&quot;Arts Education Services&quot;,&quot;href&quot;:&quot;pagetostage.html&quot;},{&quot;label&quot;:&quot;Sickle Cell Stars&quot;,&quot;href&quot;:&quot;sicklecellstars.html&quot;},{&quot;label&quot;:&quot;Events&quot;,&quot;href&quot;:&quot;events.html&quot;},{&quot;label&quot;:&quot;Get Involved&quot;,&quot;href&quot;:&quot;getinvolved.html&quot;},{&quot;label&quot;:&quot;Give&quot;,&quot;href&quot;:&quot;give.html&quot;}],&quot;current&quot;:&quot;about.html&quot;,&quot;user&quot;:null}">
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav__inner">
+
+      <a href="index.html" class="nav__logo" aria-label="Maroon 9 Home">
+        <img src="images/logo.avif" alt="Maroon 9 Logo" />
+      </a>
+
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active" aria-current="page">About</a></li>
+        <li class="nav__item">
+          <a href="kidsactingwithpurpose.html" class="nav__dropdown-toggle">
+            Youth Programs <svg class="nav__caret" viewBox="0 0 12 12" width="12" height="12" aria-hidden="true" focusable="false"><path d="M2.5 4.25 6 7.75l3.5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <ul class="nav__dropdown">
+            <li><a href="kidsactingwithpurpose.html">Kids Acting With Purpose</a></li>
+            <li><a href="conflictresolutionthroughtheatre.html">Conflict Resolution Through Theatre™</a></li>
+          </ul>
+        </li>
+        <li><a href="hub.html">The Hub</a></li>
+        <li><a href="pagetostage.html">Arts Education Services</a></li>
+        <li><a href="sicklecellstars.html">Sickle Cell Stars</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="getinvolved.html">Get Involved</a></li>
+        <li><a href="give.html">Give</a></li>
+      </ul>
+
+    </div>
+  </nav>
+  </div>
+<main id="main">
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" aria-labelledby="page-title">
+    <span class="section-label">Our Story</span>
+    <h1 class="page-hero__title" id="page-title">About Maroon 9</h1>
+    <p class="page-hero__desc">
+      Maroon 9 Community Enrichment Organization is a youth development organization using the transformative power of the arts to prepare young people for life beyond the stage.
+    </p>
+  </section>
+
+  <!-- MISSION / VISION / STORY -->
+  <section class="content-section" aria-labelledby="mission-title">
+    <div class="content-section__inner">
+      <span class="section-label">Why We're Here</span>
+      <h2 class="section-title" id="mission-title">Our Mission</h2>
+      <p class="section-body" style="margin-bottom: 40px;">
+        To inspire, empower, and develop youth through the transformative power of the arts.
+      </p>
+
+      <h2 class="section-title">Our Vision</h2>
+      <p class="section-body" style="margin-bottom: 40px;">
+        To prepare youth for life beyond the stage.
+      </p>
+
+      <h2 class="section-title">Our Story</h2>
+      <div class="story-block" style="margin-left: 0;">
+        <p>
+          <strong>Maroon 9 was founded in 2016 by Cynthia Nobles</strong> to honor the life and legacy of her brother, Michael Patterson, who is also the uncle of current Executive Director ShaVonne Davis.
+        </p>
+        <p>
+          Michael lived with Sickle Cell Disease until his passing at age 49 and was deeply involved in arts and entertainment. The arts brought him joy, purpose, and an outlet that helped him navigate the challenges of living with the disease.
+        </p>
+        <p>
+          <strong>The name &ldquo;Maroon 9&rdquo; is a tribute to Michael.</strong> Maroon is the official awareness ribbon color for Sickle Cell Disease, and the number 9 represents September, which is Sickle Cell Disease Awareness Month.
+        </p>
+        <p>
+          Today, his legacy continues through Maroon 9 and the leadership of his family. What began at the intersection of creativity and sickle cell advocacy has grown into an organization using the arts to empower young people, strengthen communities, and create opportunities for the next generation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORE VALUES -->
+  <section class="about" id="values" aria-labelledby="values-title">
+    <div class="about__inner" style="grid-template-columns: 1fr;">
+      <div>
+        <span class="section-label">What Guides Us</span>
+        <h2 class="section-title section-title--white" id="values-title">Our Core Values</h2>
+        <p class="section-body">
+          <strong>Creativity. Empathy. Empowerment. Prevention.</strong> These values guide how we design programs, engage young people and families, build partnerships, and serve our community.
+        </p>
+        <div class="about__values">
+          <div class="about__value">
+            <div class="about__value-name">Creativity</div>
+            <div class="about__value-desc">Dynamic arts-centered storytelling and expression</div>
+          </div>
+          <div class="about__value">
+            <div class="about__value-name">Empathy</div>
+            <div class="about__value-desc">Authentic stories and participant voices at the center</div>
+          </div>
+          <div class="about__value">
+            <div class="about__value-name">Empowerment</div>
+            <div class="about__value-desc">Leadership, confidence, and growth opportunities</div>
+          </div>
+          <div class="about__value">
+            <div class="about__value-name">Prevention</div>
+            <div class="about__value-desc">Education and awareness around Sickle Cell Disease</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR GOALS -->
+  <section class="content-section goals" id="goals" aria-labelledby="goals-title">
+    <div class="content-section__inner">
+      <span class="section-label">Our Goals</span>
+      <h2 class="section-title" id="goals-title">2025-2027 Strategic Goals</h2>
+      <ol class="goal-grid">
+        <li class="goal-card">
+          <span class="goal-card__number" aria-hidden="true">01</span>
+          <h3 class="goal-card__title">Provide Comprehensive Arts Education</h3>
+          <p class="goal-card__text">Offer accessible and affordable opportunities for youth from diverse backgrounds and abilities to participate in high-quality arts enrichment activities.</p>
+        </li>
+        <li class="goal-card">
+          <span class="goal-card__number" aria-hidden="true">02</span>
+          <h3 class="goal-card__title">Promote Positive Youth Development</h3>
+          <p class="goal-card__text">Teach youth transferable skills that support various career pathways and extend beyond life after high school.</p>
+        </li>
+        <li class="goal-card">
+          <span class="goal-card__number" aria-hidden="true">03</span>
+          <h3 class="goal-card__title">Advocacy for Prevention</h3>
+          <p class="goal-card__text">Actively advocate for the role of creative expression in preventing juvenile crime through awareness campaigns, partnerships, and community outreach.</p>
+        </li>
+        <li class="goal-card">
+          <span class="goal-card__number" aria-hidden="true">04</span>
+          <h3 class="goal-card__title">Community Collaboration</h3>
+          <p class="goal-card__text">Collaborate with local organizations to extend the reach of our programs, promote community involvement, and educate the community on important topics.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- OUR PEOPLE -->
+  <section class="content-section" id="people" aria-labelledby="people-title">
+    <div class="content-section__inner">
+      <span class="section-label">Who Makes This Possible</span>
+      <h2 class="section-title" id="people-title">Our People</h2>
+      <p class="section-body">
+        Maroon 9's work is made possible by committed staff, board members, teaching artists, volunteers, partners, and community supporters who believe in the potential of young people.
+      </p>
+
+      <div class="link-row" role="list">
+        <a href="#leadership">Meet Our Leadership</a>
+        <a href="#board">Board of Directors</a>
+        <a href="#partners">Community Partners</a>
+      </div>
+
+      <div class="leader-grid" id="leadership">
+        <div class="leader-card">
+          <img src="images/ShaVonne Headshot 2.avif" alt="ShaVonne Davis, Executive Director of Maroon 9" class="leader-card__photo" />
+          <div>
+            <div class="leader-card__name">ShaVonne Davis</div>
+            <div class="leader-card__role">Executive Director</div>
+            <div class="leader-card__bio">
+              <p>
+                ShaVonne Davis is a social entrepreneur, theatre educator, director, and arts consultant from Fort Worth, Texas, with more than 20 years of experience using theatre as a tool for youth development, literacy, and community impact. She is a proud graduate of Clark Atlanta University, where she earned a Bachelor of Arts in Theatre Arts.
+              </p>
+              <p>
+                Mrs. Davis is the founder of <strong>Acting With Mrs. Davis</strong>, a theatre arts enrichment company providing workshops, residencies, and performance-based learning experiences for K&ndash;12 youth in schools, theatres, afterschool programs, and community settings. She also serves as Executive Director of <strong>Maroon 9 Community Enrichment Organization</strong>, a nonprofit founded by her mother and rooted in a mission to inspire, empower, and develop youth through the transformative power of the arts.
+              </p>
+              <p>
+                Under her leadership, Maroon 9 has delivered <strong>more than 950 hours of enrichment programming</strong>, served <strong>over 3,000 youth</strong>, and partnered with more than 65 schools and community organizations across Texas through theatre arts literacy programs, conflict resolution workshops, youth performances, and educator training. She is currently leading the development of the Maroon 9 Youth Arts &amp; Creative Workforce Hub, a future cultural arts space focused on youth arts access, creative workforce development, and community engagement in Fort Worth.
+              </p>
+              <p>
+                In 2021, her work received national recognition through the <strong>$10,000 @BeyGOOD Small Business Impact Grant</strong> presented by Beyonc&eacute; and the NAACP. In 2025, Davis received the <strong>Arts Fort Worth Arts Advocate of the Year Award</strong>. Her work has been featured by WFAA Channel 8, ABC13 Houston, NBC 5 DFW, Fox 4, and Localish.
+              </p>
+              <p class="leader-card__contact">
+                Email: <a href="mailto:sdavis@maroon9.org">sdavis@maroon9.org</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="board" style="margin-top: 48px;">
+        <h3 class="feature-block__title">Board of Directors</h3>
+        <ul class="board-grid">
+          <li class="board-card">
+            <img src="images/Dr_ DeAnne Young_heic.avif" alt="Dr. DeAnne Young, President of Maroon 9" class="board-card__photo" loading="lazy" />
+            <div class="board-card__name">Dr. DeAnne Young</div>
+            <div class="board-card__role">President</div>
+          </li>
+          <li class="board-card">
+            <img src="images/cynthia headshot.avif" alt="Cynthia Nobles, Vice President &amp; Founder of Maroon 9" class="board-card__photo" loading="lazy" />
+            <div class="board-card__name">Cynthia Nobles</div>
+            <div class="board-card__role">Vice President &amp; Founder</div>
+          </li>
+          <li class="board-card">
+            <img src="images/lawanda gates.avif" alt="LaWanda Gates, Treasurer of Maroon 9" class="board-card__photo" loading="lazy" />
+            <div class="board-card__name">LaWanda Gates</div>
+            <div class="board-card__role">Treasurer</div>
+          </li>
+          <li class="board-card">
+            <img src="images/justindavis.avif" alt="Justin Davis, Secretary of Maroon 9" class="board-card__photo" loading="lazy" />
+            <div class="board-card__name">Justin Davis</div>
+            <div class="board-card__role">Secretary</div>
+          </li>
+          <li class="board-card">
+            <img src="images/Linda sayles_edited_edited.avif" alt="Linda Sayles, Board Member of Maroon 9" class="board-card__photo" loading="lazy" />
+            <div class="board-card__name">Linda Sayles</div>
+            <div class="board-card__role">Board Member</div>
+          </li>
+          <li class="board-card">
+            <img src="images/melvinlee.avif" alt="Melvin Lee, Board Member of Maroon 9" class="board-card__photo" loading="lazy" />
+            <div class="board-card__name">Melvin Lee</div>
+            <div class="board-card__role">Board Member</div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- COMMUNITY PARTNERS (React: SponsorMarquee scrolls the logos; tap one to show its colors) -->
+      <div id="partners" class="partners">
+        <h3 class="feature-block__title">Community Partners</h3>
+        <p class="section-body">We're proud to work alongside schools, districts, foundations, and community organizations across Tarrant County. Maroon 9's programs are made possible by these generous partners.</p>
+        <div data-island="sponsor-marquee" data-props="{&quot;sponsors&quot;:[{&quot;name&quot;:&quot;Braver Together&quot;,&quot;logo&quot;:&quot;images/Braver Logo 2_edited.avif&quot;},{&quot;name&quot;:&quot;Arts Fort Worth&quot;,&quot;logo&quot;:&quot;images/ARTS FW.avif&quot;},{&quot;name&quot;:&quot;North Texas Community Foundation&quot;,&quot;logo&quot;:&quot;images/NTFC_Fund_Logo_FARE_Primary - Full Color.avif&quot;},{&quot;name&quot;:&quot;United Way of Tarrant County&quot;,&quot;logo&quot;:&quot;images/unitedway.avif&quot;},{&quot;name&quot;:&quot;Sid W. Richardson Foundation&quot;,&quot;logo&quot;:&quot;images/SID richardson .avif&quot;},{&quot;name&quot;:&quot;H-E-B&quot;,&quot;logo&quot;:&quot;images/HEB LOGO_edited.avif&quot;},{&quot;name&quot;:&quot;Fort Worth Tourism Public Improvement District&quot;,&quot;logo&quot;:&quot;images/FWTPID LOGO.avif&quot;},{&quot;name&quot;:&quot;Big Thought&quot;,&quot;logo&quot;:&quot;images/Big Thought.avif&quot;}]}">
+          <ul class="sponsors__grid">
+            <li class="sponsor-logo"><img src="images/Braver Logo 2_edited.avif" alt="Braver Together" loading="lazy" /></li>
+            <li class="sponsor-logo"><img src="images/ARTS FW.avif" alt="Arts Fort Worth" loading="lazy" /></li>
+            <li class="sponsor-logo"><img src="images/NTFC_Fund_Logo_FARE_Primary - Full Color.avif" alt="North Texas Community Foundation" loading="lazy" /></li>
+            <li class="sponsor-logo"><img src="images/unitedway.avif" alt="United Way of Tarrant County" loading="lazy" /></li>
+            <li class="sponsor-logo"><img src="images/SID richardson .avif" alt="Sid W. Richardson Foundation" loading="lazy" /></li>
+            <li class="sponsor-logo"><img src="images/HEB LOGO_edited.avif" alt="H-E-B" loading="lazy" /></li>
+            <li class="sponsor-logo"><img src="images/FWTPID LOGO.avif" alt="Fort Worth Tourism Public Improvement District" loading="lazy" /></li>
+            <li class="sponsor-logo"><img src="images/Big Thought.avif" alt="Big Thought" loading="lazy" /></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR IMPACT (narrative) -->
+  <section class="content-section our-impact" id="our-impact" aria-labelledby="our-impact-title">
+    <div class="content-section__inner our-impact__inner">
+      <div class="our-impact__text">
+        <h2 class="section-title" id="our-impact-title">Our Impact</h2>
+        <p class="our-impact__lead">
+          Since its inception, Maroon 9 Community Enrichment Organization has made measurable impacts through dedicated arts and enrichment programs that support youth, families, and communities in Fort Worth and beyond. We focus on providing high-quality after-school and summer programs in Fine Arts, STEM, and Life Skills for underserved youth, empowering them to achieve academic, personal, and career success. By creating safe, structured environments for creativity and self-expression, our programs have shown positive results in improving school attendance, academic performance, and behavior, while also reducing the likelihood of involvement in crime and violence.
+        </p>
+        <p>
+          Through consistent financial support from grants, donors, and community sponsors, Maroon 9 has maintained its mission of offering programs at no cost to families. Each year, our financial statements and impact reports reflect responsible stewardship of funds, prioritizing program expansion, quality enrichment materials, and support services. Our impact reports highlight achievements such as increased school engagement, reduced disciplinary actions, and career exploration in fields like performing arts and technology. With over 40 partnerships with organizations and professionals, our programs provide youth with skills and resources that shape their futures and uplift our community.
+        </p>
+        <p>
+          Maroon 9 remains committed to transparency and accountability, as demonstrated in our annual financial statements and impact reports. We invite you to review these reports to see the transformative effects of your support and the ongoing positive change we create together for our youth.
+        </p>
+      </div>
+
+      <!-- Highlights pulled from the text above -->
+      <aside class="our-impact__highlights" aria-label="Impact highlights">
+        <div class="impact-highlight">
+          <span class="impact-highlight__value">$0</span>
+          <span class="impact-highlight__label">Programs offered at no cost to families</span>
+        </div>
+        <div class="impact-highlight">
+          <span class="impact-highlight__value">40+</span>
+          <span class="impact-highlight__label">Partnerships with organizations and professionals</span>
+        </div>
+        <div class="impact-highlight">
+          <span class="impact-highlight__value impact-highlight__value--text">Fine Arts · STEM · Life&nbsp;Skills</span>
+          <span class="impact-highlight__label">After-school and summer programs for underserved youth</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- IMPACT -->
+  <section class="impact" id="impact" aria-labelledby="stats-title">
+    <div class="impact__inner">
+      <div>
+        <span class="section-label">By the Numbers</span>
+        <h2 class="section-title" id="stats-title">Making a Real Difference</h2>
+        <p class="section-body">
+          Since our founding, Maroon 9 has served hundreds of youth across the DFW metroplex — giving them a creative community and the skills to succeed beyond the stage.
+        </p>
+        <div class="impact__stats">
+          <div class="impact__stat">
+            <div class="impact__stat-number">500+</div>
+            <div class="impact__stat-label">Youth Served</div>
+          </div>
+          <div class="impact__stat">
+            <div class="impact__stat-number">10+</div>
+            <div class="impact__stat-label">Years Active</div>
+          </div>
+          <div class="impact__stat">
+            <div class="impact__stat-number">3</div>
+            <div class="impact__stat-label">Core Programs</div>
+          </div>
+          <div class="impact__stat">
+            <div class="impact__stat-number">100%</div>
+            <div class="impact__stat-label">Community Driven</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img src="images/maroon6.png" alt="Maroon 9 youth ensemble in kente-print costumes singing together on stage" class="impact__image" />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner" aria-label="Call to Action">
+    <div class="cta-banner__inner">
+      <h2 class="cta-banner__title">Join Our Mission</h2>
+      <p class="cta-banner__desc">
+        Whether you are a parent, educator, sponsor, or community member — there is a place for you in the Maroon 9 family.
+      </p>
+      <div class="cta-banner__actions">
+        <a href="contact.html" class="btn btn-maroon">Contact Us</a>
+        <a href="kidsactingwithpurpose.html" class="btn btn-outline">See Our Programs</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+
+      <!-- NEWSLETTER (React: NewsletterForm submits in place; this form works without JavaScript) -->
+      <div class="newsletter" id="newsletter">
+        <div class="newsletter__intro">
+          <h2 class="newsletter__title" id="newsletter-title">Newsletter Sign-Up</h2>
+          <p class="newsletter__desc">Stay updated with news, programs and events.</p>
+        </div>
+        <div data-island="newsletter-form" data-props="{&quot;email&quot;:&quot;&quot;}">
+          <form class="newsletter__form" action="newsletter-signup.php" method="post" aria-labelledby="newsletter-title">
+            <input type="hidden" name="csrf" value="75b272051a34d4181c362530cbfc234506f52a3b55db9e45c4ee8b585d615443" />
+            <input type="hidden" name="back" value="about.html" />
+            <div class="newsletter__row">
+              <label class="visually-hidden" for="newsletter-email">Email address</label>
+              <input type="email" id="newsletter-email" name="email" placeholder="Your email address" autocomplete="email" value="" required />
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </div>
+            <label class="newsletter__consent">
+              <input type="checkbox" name="consent" value="1" required />
+              <span>Yes, send me the Maroon 9 newsletter. I can unsubscribe anytime.</span>
+            </label>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer__top">
+
+        <div>
+          <div class="footer__brand-name">Maroon 9</div>
+          <p class="footer__brand-desc">
+            Preparing Fort Worth youth for life beyond the stage through creative arts, mentorship, conflict resolution, and sickle cell disease advocacy since 2016.
+          </p>
+          <div class="footer__col-title">Follow Us</div>
+          <ul class="footer__social">
+            <li>
+              <a href="https://www.facebook.com/maroon9communityenrichment" class="footer__social-link footer__social-link--facebook" target="_blank" rel="noopener" aria-label="Maroon 9 on Facebook (opens in a new tab)">
+                <svg class="social-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M13.4 21v-7.6h2.6l.4-3H13.4V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.7v3h2.6V21z"/></svg>              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/maroon9communityenrichment/" class="footer__social-link footer__social-link--instagram" target="_blank" rel="noopener" aria-label="Maroon 9 on Instagram (opens in a new tab)">
+                <svg class="social-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.25" fill="currentColor"/></svg>              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/company/maroon9communityenrichment/" class="footer__social-link footer__social-link--linkedin" target="_blank" rel="noopener" aria-label="Maroon 9 on LinkedIn (opens in a new tab)">
+                <svg class="social-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect x="4" y="9.2" width="3.3" height="10.8" fill="currentColor"/><circle cx="5.65" cy="5.6" r="1.95" fill="currentColor"/><path fill="currentColor" d="M10 9.2h3.15v1.5h.05c.45-.85 1.5-1.7 3.1-1.7 3.3 0 3.9 2.15 3.9 5V20h-3.3v-5.3c0-1.25 0-2.9-1.75-2.9s-2 1.37-2 2.8V20H10z"/></svg>              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/@maroon9" class="footer__social-link footer__social-link--youtube" target="_blank" rel="noopener" aria-label="Maroon 9 on YouTube (opens in a new tab)">
+                <svg class="social-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" d="M21.6 7.2a2.5 2.5 0 0 0-1.77-1.77C18.27 5 12 5 12 5s-6.27 0-7.83.43A2.5 2.5 0 0 0 2.4 7.2C2 8.76 2 12 2 12s0 3.24.4 4.8a2.5 2.5 0 0 0 1.77 1.77C5.73 19 12 19 12 19s6.27 0 7.83-.43a2.5 2.5 0 0 0 1.77-1.77C22 15.24 22 12 22 12s0-3.24-.4-4.8zM10 15.1V8.9l5.3 3.1z"/></svg>              </a>
+            </li>
+            <li>
+              <a href="https://www.eventbrite.com/e/bone-soup-a-kwanzaa-story-by-kids-acting-with-purpose-tickets-1012893470637?aff=oddtdtcreator#organizer-card" class="footer__social-link footer__social-link--eventbrite" target="_blank" rel="noopener" aria-label="Maroon 9 on Eventbrite (opens in a new tab)">
+                <svg class="social-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" d="M6.5 12h11a5.5 5.5 0 1 0-1.6 3.9"/></svg>              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Navigate</div>
+          <ul class="footer__col-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html#impact">Impact</a></li>
+            <li><a href="hub.html">The Hub</a></li>
+            <li><a href="events.html">Events</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Programs</div>
+          <ul class="footer__col-links">
+            <li><a href="kidsactingwithpurpose.html">Kids Acting With Purpose</a></li>
+            <li><a href="conflictresolutionthroughtheatre.html">Conflict Resolution Through Theatre&trade;</a></li>
+            <li><a href="pagetostage.html">Arts Education Services</a></li>
+            <li><a href="sicklecellstars.html">Sickle Cell Stars</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Latest News</div>
+          <ul class="footer__col-links">
+            <li><a href="https://www.maroon9.org/post/when-culture-meets-cowtown-bone-soup-a-kwanzaa-story-2024" target="_blank" rel="noopener">When Culture Meets Cowtown</a></li>
+            <li><a href="https://www.maroon9.org/post/celebrating-courage-and-resilience-harriet-take-my-hand-and-follow-me" target="_blank" rel="noopener">Celebrating Courage and Resilience</a></li>
+            <li><a href="https://www.maroon9.org/post/empowering-young-creators-theatre-arts-and-media-arts-camp-2024" target="_blank" rel="noopener">Empowering Young Creators</a></li>
+            <li><a href="https://www.maroon9.org/post/a-journey-of-inspiration-and-empowerment-the-stand-up-documentary-project" target="_blank" rel="noopener">A Journey of Inspiration and Empowerment</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Get Involved</div>
+          <ul class="footer__col-links">
+            <li><a href="getinvolved.html#volunteer">Volunteer</a></li>
+            <li><a href="getinvolved.html">Partner With Us</a></li>
+            <li><a href="give.html">Give</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="staff-login.html">Staff Login</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 Maroon 9 Community Enrichment Organization. All rights reserved.</span>
+      </div>
+      <p class="footer__disclaimer">
+        <a href="https://catalog.uta.edu/coursedescriptions/ctec/" target="_blank" rel="noopener">
+          This website was created by Elie Bossombo in collaboration with the Communication Technology Department at UTA. It was created as a class project for CTEC 4350 — Web Communication Design and Development III at The University of Texas at Arlington and is intended for educational purposes only.
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- LATEST NEWS: React (NewsPanel) adds a "Latest News" tab that opens a side panel -->
+  <div data-island="news-panel" data-props="{&quot;articles&quot;:[{&quot;title&quot;:&quot;When Culture Meets Cowtown: Bone Soup: A Kwanzaa Story 2024&quot;,&quot;href&quot;:&quot;https://www.maroon9.org/post/when-culture-meets-cowtown-bone-soup-a-kwanzaa-story-2024&quot;,&quot;image&quot;:&quot;images/When Culture Meets Cowtown.avif&quot;,&quot;tag&quot;:&quot;Production&quot;},{&quot;title&quot;:&quot;Celebrating Courage and Resilience: Harriet: Take My Hand and Follow Me&quot;,&quot;href&quot;:&quot;https://www.maroon9.org/post/celebrating-courage-and-resilience-harriet-take-my-hand-and-follow-me&quot;,&quot;image&quot;:&quot;images/Courage and Resilience- Harriet.avif&quot;,&quot;tag&quot;:&quot;Production&quot;},{&quot;title&quot;:&quot;Empowering Young Creators: Theatre Arts and Media Arts Camp 2024&quot;,&quot;href&quot;:&quot;https://www.maroon9.org/post/empowering-young-creators-theatre-arts-and-media-arts-camp-2024&quot;,&quot;image&quot;:&quot;images/Empowering Young Creators.webp&quot;,&quot;tag&quot;:&quot;Camp&quot;},{&quot;title&quot;:&quot;A Journey of Inspiration and Empowerment: The Stand Up Documentary Project&quot;,&quot;href&quot;:&quot;https://www.maroon9.org/post/a-journey-of-inspiration-and-empowerment-the-stand-up-documentary-project&quot;,&quot;image&quot;:&quot;images/Journey of Inspiration and Empowerment.webp&quot;,&quot;tag&quot;:&quot;Documentary&quot;}]}"></div>
+
+</body>
+</html>

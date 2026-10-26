@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+(function () {
+  var msg = 'This is a preview copy of the Maroon 9 site. Forms, sign-in and email confirmations work on the full site only.';
+  var realFetch = window.fetch;
+  window.fetch = function (input) {
+    var url = String((input && input.url) || input);
+    if (/\/api\/[a-z-]+\.php/.test(url)) {
+      return Promise.resolve(new Response(JSON.stringify({ error: msg }),
+        { status: 503, headers: { 'Content-Type': 'application/json' } }));
+    }
+    return realFetch.apply(this, arguments);
+  };
+  document.addEventListener('submit', function (e) {
+    if ((e.target.getAttribute('method') || '').toLowerCase() === 'post') {
+      e.preventDefault();
+      alert(msg);
+    }
+  }, true);
+})();
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conflict Resolution Through Theatre™ — Maroon 9</title>
+  <meta name="description" content="Conflict Resolution Through Theatre™ — Maroon 9&#039;s signature curriculum using theatre to teach youth safe, nonviolent conflict resolution skills." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css?v=1792971497" />
+  <link rel="stylesheet" href="assets/app-BtogQ1Ry.css" />
+  <script>document.documentElement.classList.add('js'); window.M9 = {"csrf":"bcc7856935a53a3b113fb5b3bd535bf9fbd02c963c0a271388594d6adc1ffbec","user":null,"page":"conflictresolutionthroughtheatre.html"};</script>
+  <script type="module" src="assets/app-B775QCqN.js"></script>
+</head>
+<body><div style="background:#2b0a12;color:#f5e6c8;font:500 13px/1.4 'DM Sans',sans-serif;text-align:center;padding:6px 16px">This is a preview copy of the Maroon 9 site. Forms, sign-in and email confirmations work on the full site only.</div>
+<a class="skip-link" href="#main">Skip to main content</a>
+  <!-- ACTION BAR -->
+  <div class="action-bar">
+    <span class="action-bar__tagline">Transforming Lives Through The Arts.</span>
+    <div class="action-bar__links">
+      <a href="kidsactingwithpurpose.html">KAWP</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Log In</a>
+      <a href="give.html" class="highlight">Donate</a>
+    </div>
+  </div>
+
+  <!-- PRIMARY NAVIGATION (React takes this over; this markup is the no-JS fallback) -->
+  <div data-island="site-nav" data-props="{&quot;items&quot;:[{&quot;label&quot;:&quot;Home&quot;,&quot;href&quot;:&quot;index.html&quot;},{&quot;label&quot;:&quot;About&quot;,&quot;href&quot;:&quot;about.html&quot;},{&quot;label&quot;:&quot;Youth Programs&quot;,&quot;href&quot;:&quot;kidsactingwithpurpose.html&quot;,&quot;children&quot;:[{&quot;label&quot;:&quot;Kids Acting With Purpose&quot;,&quot;href&quot;:&quot;kidsactingwithpurpose.html&quot;},{&quot;label&quot;:&quot;Conflict Resolution Through Theatre™&quot;,&quot;href&quot;:&quot;conflictresolutionthroughtheatre.html&quot;}]},{&quot;label&quot;:&quot;The Hub&quot;,&quot;href&quot;:&quot;hub.html&quot;},{&quot;label&quot;:&quot;Arts Education Services&quot;,&quot;href&quot;:&quot;pagetostage.html&quot;},{&quot;label&quot;:&quot;Sickle Cell Stars&quot;,&quot;href&quot;:&quot;sicklecellstars.html&quot;},{&quot;label&quot;:&quot;Events&quot;,&quot;href&quot;:&quot;events.html&quot;},{&quot;label&quot;:&quot;Get Involved&quot;,&quot;href&quot;:&quot;getinvolved.html&quot;},{&quot;label&quot;:&quot;Give&quot;,&quot;href&quot;:&quot;give.html&quot;}],&quot;current&quot;:&quot;conflictresolutionthroughtheatre.html&quot;,&quot;user&quot;:null}">
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav__inner">
+
+      <a href="index.html" class="nav__logo" aria-label="Maroon 9 Home">
+        <img src="images/logo.avif" alt="Maroon 9 Logo" />
+      </a>
+
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="nav__item active">
+          <a href="kidsactingwithpurpose.html" class="nav__dropdown-toggle active">
+            Youth Programs <svg class="nav__caret" viewBox="0 0 12 12" width="12" height="12" aria-hidden="true" focusable="false"><path d="M2.5 4.25 6 7.75l3.5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <ul class="nav__dropdown">
+            <li><a href="kidsactingwithpurpose.html">Kids Acting With Purpose</a></li>
+            <li><a href="conflictresolutionthroughtheatre.html" class="active" aria-current="page">Conflict Resolution Through Theatre™</a></li>
+          </ul>
+        </li>
+        <li><a href="hub.html">The Hub</a></li>
+        <li><a href="pagetostage.html">Arts Education Services</a></li>
+        <li><a href="sicklecellstars.html">Sickle Cell Stars</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="getinvolved.html">Get Involved</a></li>
+        <li><a href="give.html">Give</a></li>
+      </ul>
+
+    </div>
+  </nav>
+  </div>
+<main id="main">
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" aria-labelledby="page-title">
+    <span class="section-label">Youth Programs</span>
+    <h1 class="page-hero__title" id="page-title">Conflict Resolution Through Theatre&trade;</h1>
+    <p class="page-hero__desc">
+      Equipping young people with practical tools to navigate conflict safely, communicate effectively, and choose safer, nonviolent responses.
+    </p>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="content-section" aria-labelledby="overview-title">
+    <div class="content-section__inner">
+      <span class="section-label">Our Signature Curriculum</span>
+      <h2 class="section-title" id="overview-title">Conflict Resolution Through Theatre&trade;</h2>
+      <div class="story-block" style="margin-left: 0;">
+        <p>
+          <strong>Conflict Resolution Through Theatre&trade;</strong> is Maroon 9's signature theatre-based curriculum that equips young people with practical tools to navigate conflict, make responsible decisions, communicate effectively, and choose safer, nonviolent responses to challenging situations.
+        </p>
+        <p>
+          Using <strong>real news stories and situations from our own communities</strong>, interactive theatre, role-play, discussion, and performance, youth examine the real-life consequences of conflict and practice healthier ways to respond. The curriculum incorporates our <strong>Know Your W.O.R.T.H. Framework</strong>, which teaches five safe and nonviolent conflict resolution skills.
+        </p>
+        <p>
+          Participants are challenged to move beyond simply learning conflict-resolution skills. Through training and the <strong>Peace-Builder Pledge</strong>, youth are encouraged to become peace-builders who use what they have learned to positively influence their schools, families, and communities.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY IT MATTERS -->
+  <section class="content-section" style="background: #fff;" aria-labelledby="why-title">
+    <div class="content-section__inner">
+      <span class="section-label">Why It Matters</span>
+      <h2 class="section-title" id="why-title">Real Tools for Real Situations</h2>
+      <p class="section-body" style="max-width: 760px;">
+        Young people are navigating conflict at school, online, in their neighborhoods, and among their peers every day. Conflict Resolution Through Theatre&trade; creates a safe, engaging environment to explore those situations before they escalate and gives youth practical strategies they can use in real life.
+      </p>
+      <img src="images/Bone Soup Meme 23.avif" alt="Two youth practicing a dialogue scene during a theatre workshop" class="section-photo" loading="lazy" />
+    </div>
+  </section>
+
+  <!-- BRING THE PROGRAM -->
+  <section class="content-section" aria-labelledby="bring-title">
+    <div class="content-section__inner">
+      <span class="section-label">Bring the Program to Your Youth</span>
+      <h2 class="section-title" id="bring-title">Bring Conflict Resolution Through Theatre&trade; to Your School or Organization</h2>
+      <p class="section-body" style="max-width: 760px;">
+        Conflict Resolution Through Theatre&trade; can be delivered through <strong>school assemblies, workshops, alternative education settings, youth organizations, church groups, and community-based programs</strong>. Experiences can be tailored to the age, setting, and needs of participating youth.
+      </p>
+      <div class="btn-group">
+        <a href="contact.html" class="btn btn-maroon">Bring This Program to Your School or Organization</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CURRENT OPPORTUNITIES -->
+  <section class="content-section" style="background: #fff;" aria-labelledby="opportunities-title">
+    <div class="content-section__inner">
+      <span class="section-label">Get Involved</span>
+      <h2 class="section-title" id="opportunities-title">Current Opportunities</h2>
+      <p class="section-body" style="max-width: 760px;">
+        Explore upcoming classes, workshops, performances, training opportunities, and registration dates.
+      </p>
+      <div class="link-row">
+        <a href="https://www.linktr.ee/maroon9" target="_blank" rel="noopener">View Current Programs</a>
+        <a href="events.html">View Events</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner" aria-label="Call to Action">
+    <div class="cta-banner__inner">
+      <h2 class="cta-banner__title">Want to Enroll a Child?</h2>
+      <p class="cta-banner__desc">
+        Reach out and we'll share current programs, camps, and how to get your young performer involved.
+      </p>
+      <div class="cta-banner__actions">
+        <a href="contact.html" class="btn btn-maroon">Contact Us</a>
+        <a href="kidsactingwithpurpose.html" class="btn btn-outline">Kids Acting With Purpose</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+
+      <!-- NEWSLETTER (React: NewsletterForm submits in place; this form works without JavaScript) -->
+      <div class="newsletter" id="newsletter">
+        <div class="newsletter__intro">
+          <h2 class="newsletter__title" id="newsletter-title">Newsletter Sign-Up</h2>
+          <p class="newsletter__desc">Stay updated with news, programs and events.</p>
+        </div>
+        <div data-island="newsletter-form" data-props="{&quot;email&quot;:&quot;&quot;}">
+          <form class="newsletter__form" action="newsletter-signup.php" method="post" aria-labelledby="newsletter-title">
+            <input type="hidden" name="csrf" value="bcc7856935a53a3b113fb5b3bd535bf9fbd02c963c0a271388594d6adc1ffbec" />
+            <input type="hidden" name="back" value="conflictresolutionthroughtheatre.html" />
+            <div class="newsletter__row">
+              <label class="visually-hidden" for="newsletter-email">Email address</label>
+              <input type="email" id="newsletter-email" name="email" placeholder="Your email address" autocomplete="email" value="" required />
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </div>
+            <label class="newsletter__consent">
+              <input type="checkbox" name="consent" value="1" required />
+              <span>Yes, send me the Maroon 9 newsletter. I can unsubscribe anytime.</span>
+            </label>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer__top">
+
+        <div>
+          <div class="footer__brand-name">Maroon 9</div>
+          <p class="footer__brand-desc">
+            Preparing Fort Worth youth for life beyond the stage through creative arts, mentorship, conflict resolution, and sickle cell disease advocacy since 2016.
+          </p>
+          <div class="footer__col-title">Follow Us</div>
+          <ul class="footer__social">
+            <li>
+              <a href="https://www.facebook.com/maroon9communityenrichment" class="footer__social-link footer__social-link--facebook" target="_blank" rel="noopener" aria-label="Maroon 9 on Facebook (opens in a new tab)">
+                <svg class="social-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M13.4 21v-7.6h2.6l.4-3H13.4V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.7v3h2.6V21z"/></svg>              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/maroon9communityenrichment/" class="footer__social-link footer__social-link--instagram" target="_blank" rel="noopener" aria-label="Maroon 9 on Instagram (opens in a new tab)">
+                <svg class="social-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.25" fill="currentColor"/></svg>              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/company/maroon9communityenrichment/" class="footer__social-link footer__social-link--linkedin" target="_blank" rel="noopener" aria-label="Maroon 9 on LinkedIn (opens in a new tab)">
+                <svg class="social-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect x="4" y="9.2" width="3.3" height="10.8" fill="currentColor"/><circle cx="5.65" cy="5.6" r="1.95" fill="currentColor"/><path fill="currentColor" d="M10 9.2h3.15v1.5h.05c.45-.85 1.5-1.7 3.1-1.7 3.3 0 3.9 2.15 3.9 5V20h-3.3v-5.3c0-1.25 0-2.9-1.75-2.9s-2 1.37-2 2.8V20H10z"/></svg>              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/@maroon9" class="footer__social-link footer__social-link--youtube" target="_blank" rel="noopener" aria-label="Maroon 9 on YouTube (opens in a new tab)">
+                <svg class="social-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" d="M21.6 7.2a2.5 2.5 0 0 0-1.77-1.77C18.27 5 12 5 12 5s-6.27 0-7.83.43A2.5 2.5 0 0 0 2.4 7.2C2 8.76 2 12 2 12s0 3.24.4 4.8a2.5 2.5 0 0 0 1.77 1.77C5.73 19 12 19 12 19s6.27 0 7.83-.43a2.5 2.5 0 0 0 1.77-1.77C22 15.24 22 12 22 12s0-3.24-.4-4.8zM10 15.1V8.9l5.3 3.1z"/></svg>              </a>
+            </li>
+            <li>
+              <a href="https://www.eventbrite.com/e/bone-soup-a-kwanzaa-story-by-kids-acting-with-purpose-tickets-1012893470637?aff=oddtdtcreator#organizer-card" class="footer__social-link footer__social-link--eventbrite" target="_blank" rel="noopener" aria-label="Maroon 9 on Eventbrite (opens in a new tab)">
+                <svg class="social-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" d="M6.5 12h11a5.5 5.5 0 1 0-1.6 3.9"/></svg>              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Navigate</div>
+          <ul class="footer__col-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html#impact">Impact</a></li>
+            <li><a href="hub.html">The Hub</a></li>
+            <li><a href="events.html">Events</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Programs</div>
+          <ul class="footer__col-links">
+            <li><a href="kidsactingwithpurpose.html">Kids Acting With Purpose</a></li>
+            <li><a href="conflictresolutionthroughtheatre.html">Conflict Resolution Through Theatre&trade;</a></li>
+            <li><a href="pagetostage.html">Arts Education Services</a></li>
+            <li><a href="sicklecellstars.html">Sickle Cell Stars</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Latest News</div>
+          <ul class="footer__col-links">
+            <li><a href="https://www.maroon9.org/post/when-culture-meets-cowtown-bone-soup-a-kwanzaa-story-2024" target="_blank" rel="noopener">When Culture Meets Cowtown</a></li>
+            <li><a href="https://www.maroon9.org/post/celebrating-courage-and-resilience-harriet-take-my-hand-and-follow-me" target="_blank" rel="noopener">Celebrating Courage and Resilience</a></li>
+            <li><a href="https://www.maroon9.org/post/empowering-young-creators-theatre-arts-and-media-arts-camp-2024" target="_blank" rel="noopener">Empowering Young Creators</a></li>
+            <li><a href="https://www.maroon9.org/post/a-journey-of-inspiration-and-empowerment-the-stand-up-documentary-project" target="_blank" rel="noopener">A Journey of Inspiration and Empowerment</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Get Involved</div>
+          <ul class="footer__col-links">
+            <li><a href="getinvolved.html#volunteer">Volunteer</a></li>
+            <li><a href="getinvolved.html">Partner With Us</a></li>
+            <li><a href="give.html">Give</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="staff-login.html">Staff Login</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 Maroon 9 Community Enrichment Organization. All rights reserved.</span>
+      </div>
+      <p class="footer__disclaimer">
+        <a href="https://catalog.uta.edu/coursedescriptions/ctec/" target="_blank" rel="noopener">
+          This website was created by Elie Bossombo in collaboration with the Communication Technology Department at UTA. It was created as a class project for CTEC 4350 — Web Communication Design and Development III at The University of Texas at Arlington and is intended for educational purposes only.
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- LATEST NEWS: React (NewsPanel) adds a "Latest News" tab that opens a side panel -->
+  <div data-island="news-panel" data-props="{&quot;articles&quot;:[{&quot;title&quot;:&quot;When Culture Meets Cowtown: Bone Soup: A Kwanzaa Story 2024&quot;,&quot;href&quot;:&quot;https://www.maroon9.org/post/when-culture-meets-cowtown-bone-soup-a-kwanzaa-story-2024&quot;,&quot;image&quot;:&quot;images/When Culture Meets Cowtown.avif&quot;,&quot;tag&quot;:&quot;Production&quot;},{&quot;title&quot;:&quot;Celebrating Courage and Resilience: Harriet: Take My Hand and Follow Me&quot;,&quot;href&quot;:&quot;https://www.maroon9.org/post/celebrating-courage-and-resilience-harriet-take-my-hand-and-follow-me&quot;,&quot;image&quot;:&quot;images/Courage and Resilience- Harriet.avif&quot;,&quot;tag&quot;:&quot;Production&quot;},{&quot;title&quot;:&quot;Empowering Young Creators: Theatre Arts and Media Arts Camp 2024&quot;,&quot;href&quot;:&quot;https://www.maroon9.org/post/empowering-young-creators-theatre-arts-and-media-arts-camp-2024&quot;,&quot;image&quot;:&quot;images/Empowering Young Creators.webp&quot;,&quot;tag&quot;:&quot;Camp&quot;},{&quot;title&quot;:&quot;A Journey of Inspiration and Empowerment: The Stand Up Documentary Project&quot;,&quot;href&quot;:&quot;https://www.maroon9.org/post/a-journey-of-inspiration-and-empowerment-the-stand-up-documentary-project&quot;,&quot;image&quot;:&quot;images/Journey of Inspiration and Empowerment.webp&quot;,&quot;tag&quot;:&quot;Documentary&quot;}]}"></div>
+
+</body>
+</html>
