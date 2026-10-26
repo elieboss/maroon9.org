@@ -54,6 +54,39 @@ A mail problem never blocks a form; the message is kept in `data/mail-log/`.
 
 The address shown on the Contact page (info@maroon9org.com) is display text only.
 
+## Deploying
+
+### GitHub Pages (preview only)
+
+GitHub Pages can't run PHP, so it gets a static copy: every page and image,
+with forms, sign-in and email turned off and a "preview copy" note at the top.
+The copy lives on the `gh-pages` branch and is served at
+https://elieboss.github.io/maroon9.org/.
+
+To refresh it after changing the site, with the local server running:
+
+```sh
+python3 bin/export-static.py          # writes _site/
+```
+
+then commit the contents of `_site/` to the `gh-pages` branch.
+
+### Full site on a PHP host (Render, Railway, …)
+
+The `Dockerfile` runs the whole site. On the host, create a new web service
+from this GitHub repo (it detects the Dockerfile) and set these environment
+variables in its dashboard:
+
+| Variable           | Value                                              |
+|--------------------|----------------------------------------------------|
+| `M9_SMTP_PASSWORD` | the 16-letter Gmail app password                   |
+| `M9_SITE_URL`      | the site's public address, e.g. `https://….onrender.com` |
+| `M9_DB_PATH`       | a file on a persistent disk, e.g. `/data/maroon9.sqlite` |
+
+Without a persistent disk, the database (accounts, messages, sign-ups) is
+wiped whenever the host restarts the service. After the first deploy, create
+the staff account from the host's shell with `php bin/create-staff.php`.
+
 ## Editing the React parts
 
 React source is in `frontend/src/`. The built files in `assets/` are what the site loads.

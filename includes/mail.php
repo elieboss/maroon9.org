@@ -29,6 +29,9 @@ function mail_config() {
   );
   $file = getenv('M9_MAIL_CONFIG') ?: __DIR__ . '/mail-config.php';
   $config = array_merge($defaults, is_file($file) ? (array) require $file : array());
+  /* On a hosting service, set these in its environment settings instead of the file */
+  if (getenv('M9_SMTP_PASSWORD')) $config['password'] = getenv('M9_SMTP_PASSWORD');
+  if (getenv('M9_SITE_URL')) $config['site_url'] = getenv('M9_SITE_URL');
   if ($config['password'] === '') $config['transport'] = 'log';
   return $config;
 }

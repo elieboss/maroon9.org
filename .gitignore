@@ -7,3 +7,4 @@ data/mail-log/
 data/mail.log
 frontend/node_modules/
 .DS_Store
+_site/

@@ -1,0 +1,6 @@
+data/*.sqlite*
+data/mail-log/
+includes/mail-config.php
+frontend/node_modules/
+_site/
+.git/
