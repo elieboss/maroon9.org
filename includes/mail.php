@@ -81,7 +81,18 @@ function mail_build($message, $config) {
  * Never throws: a mail problem must not break the form the person just submitted.
  * Returns 'sent', 'logged' or 'failed'.
  */
+/* Outcome of the most recent send_mail_batch(): 'sent', 'failed', 'logged' (Gmail not set up) or null */
+function last_mail_status($set = null) {
+  static $status = null;
+  if ($set !== null) $status = $set;
+  return $status;
+}
+
 function send_mail_batch($messages) {
+  return last_mail_status(send_mail_batch_inner($messages));
+}
+
+function send_mail_batch_inner($messages) {
   $messages = array_values(array_filter($messages, function ($m) {
     return filter_var($m['to'] ?? '', FILTER_VALIDATE_EMAIL);
   }));
@@ -176,7 +187,9 @@ class M9Smtp {
     }
     $code = (int) substr($reply, 0, 3);
     if (!in_array($code, $codes, true)) {
-      throw new RuntimeException($error ?: 'SMTP error: ' . trim($reply ?: 'no response'));
+      /* Keep the server's own reply (e.g. Gmail's 534/535 codes): it says why */
+      $server = preg_replace('/\s+/', ' ', trim($reply ?: 'no response'));
+      throw new RuntimeException(($error ? "$error " : 'SMTP error. ') . "Server said: $server");
     }
   }
 }

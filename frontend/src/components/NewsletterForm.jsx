@@ -10,12 +10,13 @@ export default function NewsletterForm({ email = '' }) {
   const id = useId();
   const form = useForm({ email, consent: false });
   const [done, setDone] = useState(null);
+  const [mailed, setMailed] = useState(null);
 
   const onSubmit = async (event) => {
     event.preventDefault();
     let status = 'subscribed';
     const ok = await form.submit(
-      async (v) => { status = (await api.post('newsletter', 'subscribe', v)).status; },
+      async (v) => { const d = await api.post('newsletter', 'subscribe', v); status = d.status; setMailed(d.email || null); },
       {
         validate: (v) => ({
           email: !isEmail(v.email) && 'Enter a valid email address.',
@@ -35,7 +36,9 @@ export default function NewsletterForm({ email = '' }) {
           <p>
             {done === 'already'
               ? `${form.values.email} is already on our list. Thanks for staying connected.`
-              : `We sent a confirmation to ${form.values.email}.`}
+              : mailed?.status === 'sent'
+                ? `We sent a confirmation to ${form.values.email}. Not there? Check Spam or Promotions.`
+                : 'You’re on the list. We couldn’t send the confirmation email right now.'}
           </p>
         </div>
       </div>

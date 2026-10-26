@@ -856,3 +856,5 @@ button.event-card__cta {
   .people-row__item[aria-hidden="true"] { display: none; }
   .people-row__item img { width: 120px; }
 }
+
+.success-panel .success-panel__email { font-size: 0.88rem; }

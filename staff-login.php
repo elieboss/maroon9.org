@@ -34,6 +34,9 @@
       <span class="section-label">Staff Only</span>
       <h1 class="section-title" id="page-title">Staff Login</h1>
       <p class="auth-card__intro">For Maroon 9 team members. Manage messages, events, sign-ups and accounts.</p>
+<?php if (isset($_GET['reset'])): ?>
+      <div class="notice notice--success" role="status">Your password was changed. Log in with your new password.</div>
+<?php endif; ?>
 
       <div data-island="auth-form" data-props="<?= island_props(array('mode' => 'staff_login', 'next' => 'staff.php')) ?>">
 <?php if ($error): ?>
@@ -53,6 +56,7 @@
         </form>
       </div>
 
+      <p class="auth-card__forgot"><a href="forgot-password.php?staff=1">Forgot your password?</a></p>
       <p class="auth-card__switch">Not on staff? <a href="login.php">Use the regular log in</a></p>
     </div>
   </section>

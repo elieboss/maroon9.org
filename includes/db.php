@@ -98,6 +98,16 @@ function db_migrate(PDO $pdo) {
       updated_at   TEXT NOT NULL DEFAULT (datetime('now'))
     );
 
+    CREATE TABLE IF NOT EXISTS password_resets (
+      id         INTEGER PRIMARY KEY AUTOINCREMENT,
+      user_id    INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+      token_hash TEXT NOT NULL UNIQUE,
+      ip         TEXT NOT NULL DEFAULT '',
+      expires_at TEXT NOT NULL,
+      used_at    TEXT,
+      created_at TEXT NOT NULL DEFAULT (datetime('now'))
+    );
+
     CREATE TABLE IF NOT EXISTS newsletter_subscribers (
       id           INTEGER PRIMARY KEY AUTOINCREMENT,
       email        TEXT NOT NULL UNIQUE COLLATE NOCASE,
@@ -111,7 +121,8 @@ function db_migrate(PDO $pdo) {
 
   /* Columns added after the first release: email confirmation */
   $columns = array_column($pdo->query('PRAGMA table_info(users)')->fetchAll(), 'name');
-  foreach (array('email_verified_at' => 'TEXT', 'email_token_hash' => 'TEXT', 'email_token_sent_at' => 'TEXT') as $col => $type) {
+  foreach (array('email_verified_at' => 'TEXT', 'email_token_hash' => 'TEXT', 'email_token_sent_at' => 'TEXT',
+                 'session_version' => 'INTEGER NOT NULL DEFAULT 0') as $col => $type) {
     if (!in_array($col, $columns, true)) $pdo->exec("ALTER TABLE users ADD COLUMN $col $type");
   }
 

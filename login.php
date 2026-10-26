@@ -32,6 +32,9 @@
       <span class="section-label">Welcome Back</span>
       <h1 class="section-title" id="page-title">Log In</h1>
       <p class="auth-card__intro">Register for events, enroll a youth, and manage your volunteer sign-up.</p>
+<?php if (isset($_GET['reset'])): ?>
+      <div class="notice notice--success" role="status">Your password was changed. Log in with your new password.</div>
+<?php endif; ?>
 
       <div data-island="auth-form" data-props="<?= island_props(array('mode' => 'login', 'next' => $next)) ?>">
 <?php if ($error): ?>
@@ -52,6 +55,7 @@
         </form>
       </div>
 
+      <p class="auth-card__forgot"><a href="forgot-password.php">Forgot your password?</a></p>
       <p class="auth-card__switch">New to Maroon 9? <a href="register.php?next=<?= e(urlencode($next)) ?>">Create an account</a></p>
       <p class="auth-card__switch auth-card__switch--small">Maroon 9 team member? <a href="staff-login.php">Staff login</a></p>
     </div>

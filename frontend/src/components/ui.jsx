@@ -169,6 +169,16 @@ export function useForm(initial) {
   return { values, setValues, set, bind, errors, message, setMessage, busy, submit };
 }
 
+/* Sentence telling the visitor whether their confirmation email went out.
+   `email` is the { status, to } object the PHP endpoints return. */
+export function emailNote(email) {
+  if (!email) return '';
+  if (email.status === 'sent') {
+    return `A confirmation email was sent to ${email.to}. If you don't see it in a few minutes, check your Spam or Promotions folder.`;
+  }
+  return 'We saved your submission, but couldn’t email a confirmation right now. Our team still has your details.';
+}
+
 export const isEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
 
 /* Download rows as a CSV file (staff exports) */

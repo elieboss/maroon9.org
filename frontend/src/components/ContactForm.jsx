@@ -1,7 +1,7 @@
 /* Contact form with live validation; saves to the database via api/contact.php */
 import { useState } from 'react';
 import { api } from '../api.js';
-import { Field, Notice, isEmail, useForm } from './ui.jsx';
+import { Field, Notice, emailNote, isEmail, useForm } from './ui.jsx';
 
 const MESSAGE_MAX = 5000;
 
@@ -15,10 +15,11 @@ export default function ContactForm({ reasons, user }) {
   const blank = { name: user?.name || '', email: user?.email || '', reason: '', message: '' };
   const form = useForm(blank);
   const [sent, setSent] = useState(false);
+  const [email, setEmail] = useState(null);
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    const ok = await form.submit((values) => api.post('contact', 'send', values), { validate });
+    const ok = await form.submit(async (values) => setEmail((await api.post('contact', 'send', values)).email), { validate });
     if (ok) setSent(true);
   };
 
@@ -28,6 +29,7 @@ export default function ContactForm({ reasons, user }) {
         <div className="success-panel__icon" aria-hidden="true">✓</div>
         <h3>Thanks, {form.values.name.split(' ')[0]}!</h3>
         <p>Your message was sent. We'll reply to <strong>{form.values.email}</strong> soon.</p>
+        <p className="success-panel__email">{emailNote(email)}</p>
         {user && <p><a href="account.php">See your messages in My Account</a></p>}
         <button type="button" className="btn btn-outline btn-outline--dark" onClick={() => { form.setValues(blank); setSent(false); }}>
           Send another message

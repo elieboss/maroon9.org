@@ -1,19 +1,19 @@
 {
-  "_VolunteerForm-k_7b8xKH.js": {
-    "file": "chunks/VolunteerForm-k_7b8xKH.js",
+  "_VolunteerForm-Fa3WAI5E.js": {
+    "file": "chunks/VolunteerForm-Fa3WAI5E.js",
     "name": "VolunteerForm",
     "imports": [
       "src/main.jsx",
       "_api-HCWcA4Sx.js",
-      "_ui-77vWw0yc.js"
+      "_ui-DIHEZRty.js"
     ]
   },
   "_api-HCWcA4Sx.js": {
     "file": "chunks/api-HCWcA4Sx.js",
     "name": "api"
   },
-  "_ui-77vWw0yc.js": {
-    "file": "chunks/ui-77vWw0yc.js",
+  "_ui-DIHEZRty.js": {
+    "file": "chunks/ui-DIHEZRty.js",
     "name": "ui",
     "imports": [
       "src/main.jsx",
@@ -21,53 +21,53 @@
     ]
   },
   "src/components/AccountDashboard.jsx": {
-    "file": "chunks/AccountDashboard-WWXZ7d89.js",
+    "file": "chunks/AccountDashboard-BafdoQhL.js",
     "name": "AccountDashboard",
     "src": "src/components/AccountDashboard.jsx",
     "isDynamicEntry": true,
     "imports": [
       "src/main.jsx",
       "_api-HCWcA4Sx.js",
-      "_ui-77vWw0yc.js",
-      "_VolunteerForm-k_7b8xKH.js"
+      "_ui-DIHEZRty.js",
+      "_VolunteerForm-Fa3WAI5E.js"
     ]
   },
   "src/components/AuthForm.jsx": {
-    "file": "chunks/AuthForm-Pg4_gLkQ.js",
+    "file": "chunks/AuthForm-B1A6Uh7t.js",
     "name": "AuthForm",
     "src": "src/components/AuthForm.jsx",
     "isDynamicEntry": true,
     "imports": [
       "src/main.jsx",
       "_api-HCWcA4Sx.js",
-      "_ui-77vWw0yc.js"
+      "_ui-DIHEZRty.js"
     ]
   },
   "src/components/ContactForm.jsx": {
-    "file": "chunks/ContactForm-KhTvnsgf.js",
+    "file": "chunks/ContactForm-YeFLFtrW.js",
     "name": "ContactForm",
     "src": "src/components/ContactForm.jsx",
     "isDynamicEntry": true,
     "imports": [
       "src/main.jsx",
       "_api-HCWcA4Sx.js",
-      "_ui-77vWw0yc.js"
+      "_ui-DIHEZRty.js"
     ]
   },
   "src/components/EventsBoard.jsx": {
-    "file": "chunks/EventsBoard-F2ZMcczP.js",
+    "file": "chunks/EventsBoard-BWqNicBY.js",
     "name": "EventsBoard",
     "src": "src/components/EventsBoard.jsx",
     "isDynamicEntry": true,
     "imports": [
       "src/main.jsx",
       "_api-HCWcA4Sx.js",
-      "_ui-77vWw0yc.js",
+      "_ui-DIHEZRty.js",
       "src/components/Gallery.jsx"
     ]
   },
   "src/components/Gallery.jsx": {
-    "file": "chunks/Gallery-CU_Pwf9x.js",
+    "file": "chunks/Gallery-MH4yGD9Y.js",
     "name": "Gallery",
     "src": "src/components/Gallery.jsx",
     "isDynamicEntry": true,
@@ -76,7 +76,7 @@
     ]
   },
   "src/components/NewsPanel.jsx": {
-    "file": "chunks/NewsPanel-BvuhfAi9.js",
+    "file": "chunks/NewsPanel-CyGBfJSl.js",
     "name": "NewsPanel",
     "src": "src/components/NewsPanel.jsx",
     "isDynamicEntry": true,
@@ -85,18 +85,18 @@
     ]
   },
   "src/components/NewsletterForm.jsx": {
-    "file": "chunks/NewsletterForm-BMOUDU7Z.js",
+    "file": "chunks/NewsletterForm-Cu_uqef-.js",
     "name": "NewsletterForm",
     "src": "src/components/NewsletterForm.jsx",
     "isDynamicEntry": true,
     "imports": [
       "src/main.jsx",
       "_api-HCWcA4Sx.js",
-      "_ui-77vWw0yc.js"
+      "_ui-DIHEZRty.js"
     ]
   },
   "src/components/PeopleMarquee.jsx": {
-    "file": "chunks/PeopleMarquee-Bc0y5dhd.js",
+    "file": "chunks/PeopleMarquee-CFhU8Kzd.js",
     "name": "PeopleMarquee",
     "src": "src/components/PeopleMarquee.jsx",
     "isDynamicEntry": true,
@@ -105,7 +105,7 @@
     ]
   },
   "src/components/SiteNav.jsx": {
-    "file": "chunks/SiteNav-QSRm022P.js",
+    "file": "chunks/SiteNav-Ct8h291m.js",
     "name": "SiteNav",
     "src": "src/components/SiteNav.jsx",
     "isDynamicEntry": true,
@@ -115,7 +115,7 @@
     ]
   },
   "src/components/SponsorMarquee.jsx": {
-    "file": "chunks/SponsorMarquee-D2fBdWaa.js",
+    "file": "chunks/SponsorMarquee-B-XSLrIh.js",
     "name": "SponsorMarquee",
     "src": "src/components/SponsorMarquee.jsx",
     "isDynamicEntry": true,
@@ -124,30 +124,30 @@
     ]
   },
   "src/components/StaffDashboard.jsx": {
-    "file": "chunks/StaffDashboard-CG2WfBvi.js",
+    "file": "chunks/StaffDashboard-1Meql1Pb.js",
     "name": "StaffDashboard",
     "src": "src/components/StaffDashboard.jsx",
     "isDynamicEntry": true,
     "imports": [
       "src/main.jsx",
       "_api-HCWcA4Sx.js",
-      "_ui-77vWw0yc.js"
+      "_ui-DIHEZRty.js"
     ]
   },
   "src/components/VolunteerSignup.jsx": {
-    "file": "chunks/VolunteerSignup-CVMKKJBv.js",
+    "file": "chunks/VolunteerSignup-BkB1lsm0.js",
     "name": "VolunteerSignup",
     "src": "src/components/VolunteerSignup.jsx",
     "isDynamicEntry": true,
     "imports": [
       "src/main.jsx",
       "_api-HCWcA4Sx.js",
-      "_ui-77vWw0yc.js",
-      "_VolunteerForm-k_7b8xKH.js"
+      "_ui-DIHEZRty.js",
+      "_VolunteerForm-Fa3WAI5E.js"
     ]
   },
   "src/main.jsx": {
-    "file": "app-BU7yT3k2.js",
+    "file": "app-B775QCqN.js",
     "name": "main",
     "src": "src/main.jsx",
     "isEntry": true,
@@ -166,7 +166,7 @@
       "src/components/StaffDashboard.jsx"
     ],
     "css": [
-      "app-9o28CU4s.css"
+      "app-BtogQ1Ry.css"
     ]
   }
 }

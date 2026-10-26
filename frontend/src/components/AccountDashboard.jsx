@@ -1,7 +1,7 @@
 /* My Account: overview, event registrations, youth enrollment, volunteering, profile */
 import { useEffect, useState } from 'react';
 import { api, logOut } from '../api.js';
-import { Badge, Field, Notice, Spinner, TabPanel, Tabs, formatDate, formatTimestamp, isEmail, todayIso, useForm } from './ui.jsx';
+import { Badge, Field, Notice, Spinner, TabPanel, Tabs, emailNote, formatDate, formatTimestamp, isEmail, todayIso, useForm } from './ui.jsx';
 import VolunteerForm from './VolunteerForm.jsx';
 
 const TABS = ['overview', 'events', 'enroll', 'volunteer', 'profile'];
@@ -132,7 +132,8 @@ function Enrollments({ data, setData }) {
 
   const submit = async (event) => {
     event.preventDefault();
-    const ok = await form.submit(async (v) => setData(await api.post('account', 'enroll', v)), {
+    let sentEmail = null;
+    const ok = await form.submit(async (v) => { const d = await api.post('account', 'enroll', v); sentEmail = d.email; setData(d); }, {
       validate: (v) => ({
         youth_name: !v.youth_name.trim() && 'Enter the youth’s name.',
         youth_age: !(Number(v.youth_age) >= 5 && Number(v.youth_age) <= 17) && 'Programs serve ages 5–17.',
@@ -141,7 +142,7 @@ function Enrollments({ data, setData }) {
     });
     if (ok) {
       form.setValues({ youth_name: '', youth_age: '', program: '', notes: '' });
-      form.setMessage({ type: 'success', text: 'Enrollment received! Our team will contact you about next steps.' });
+      form.setMessage({ type: 'success', text: `Enrollment received! Our team will contact you about next steps. ${emailNote(sentEmail)}` });
     }
   };
 

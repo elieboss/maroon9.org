@@ -12,4 +12,4 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') json_error('Method not allowed.', 405
 
 $result = contact_submit($input);
 if (isset($result['error'])) json_error($result['error'], $result['status'], $result['fields'] ?? null);
-json_out(array('ok' => true), 201);
+json_out(with_email_status(array('ok' => true), str_field($input, 'email')), 201);

@@ -12,4 +12,6 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') json_error('Method not allowed.', 405
 
 $result = newsletter_subscribe(str_field($input, 'email'), !empty($input['consent']));
 if (isset($result['error'])) json_error($result['error'], $result['status_code'], $result['fields'] ?? null);
-json_out(array('status' => $result['status']), $result['status'] === 'subscribed' ? 201 : 200);
+$out = array('status' => $result['status']);
+if ($result['status'] === 'subscribed') $out = with_email_status($out, str_field($input, 'email'));
+json_out($out, $result['status'] === 'subscribed' ? 201 : 200);

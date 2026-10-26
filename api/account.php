@@ -86,7 +86,8 @@ switch (str_field($input, 'action', 30)) {
     }
 
     db()->prepare('UPDATE users SET password_hash = ? WHERE id = ?')->execute(array(password_hash($new, PASSWORD_DEFAULT), $uid));
-    log_in_user($uid);   // new session ID after a credential change
+    sign_out_other_sessions($uid);
+    log_in_user($uid);   // new session ID (and version) for this device only
     $summary = account_summary($uid);
     $summary['csrf'] = csrf_token();
     json_out($summary);
@@ -109,7 +110,7 @@ switch (str_field($input, 'action', 30)) {
       array('Youth' => $youthName, 'Age' => $youthAge, 'Program' => m9_programs()[$program], 'Notes' => $notes),
       "Thanks for enrolling $youthName! Our team will contact you about schedules and next steps.",
       'staff.php?tab=signups');
-    json_out(account_summary($uid), 201);
+    json_out(with_email_status(account_summary($uid), $user['email']), 201);
 
   case 'withdraw_enrollment':
     db()->prepare("DELETE FROM enrollments WHERE id = ? AND user_id = ? AND status = 'received'")
@@ -131,7 +132,7 @@ switch (str_field($input, 'action', 30)) {
       array('Interests' => $interests, 'Availability' => $availability, 'Notes' => $notes),
       'Thank you for volunteering with Maroon 9! Our team will reach out with opportunities that fit your interests.',
       'staff.php?tab=signups');
-    json_out(account_summary($uid));
+    json_out(with_email_status(account_summary($uid), $user['email']));
 
   case 'resend_verification':
     $row = db()->prepare("SELECT email_verified_at, email_token_sent_at > datetime('now', '-2 minutes') AS recent FROM users WHERE id = ?");

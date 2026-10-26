@@ -44,7 +44,8 @@ if ($action === 'register' || $action === 'unregister') {
   } else {
     db()->prepare('DELETE FROM event_registrations WHERE event_id = ? AND user_id = ?')->execute(array($eventId, $user['id']));
   }
-  json_out(array('events' => events_list($user)));
+  $out = array('events' => events_list($user));
+  json_out($action === 'register' ? with_email_status($out, $user['email']) : $out);
 }
 
 $user = api_require_staff();

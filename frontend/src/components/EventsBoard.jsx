@@ -4,7 +4,7 @@
 */
 import { useState } from 'react';
 import { api } from '../api.js';
-import { Badge, Notice, TabPanel, Tabs, formatDate, parseDate } from './ui.jsx';
+import { Badge, Notice, TabPanel, Tabs, emailNote, formatDate, parseDate } from './ui.jsx';
 import Gallery from './Gallery.jsx';
 
 function downloadIcs(event) {
@@ -121,7 +121,7 @@ export default function EventsBoard({ events: initialEvents, user, highlights = 
     try {
       const data = await api.post('events', action, { event_id: event.id, ...body });
       setEvents(data.events);
-      setNotice({ type: 'success', text: success });
+      setNotice({ type: 'success', text: `${success} ${emailNote(data.email)}`.trim() });
     } catch (error) {
       setNotice({ type: 'error', text: error.message });
     } finally {

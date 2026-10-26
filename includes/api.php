@@ -54,6 +54,12 @@ function str_field($input, $key, $max = 200, $multiline = false) {
   return mb_substr($multiline ? $value : single_line($value), 0, $max);
 }
 
+/* Attach the confirmation-email outcome to a JSON response */
+function with_email_status($data, $to) {
+  $data['email'] = array('status' => last_mail_status() ?: 'none', 'to' => $to);
+  return $data;
+}
+
 function valid_email($email) {
   return filter_var($email, FILTER_VALIDATE_EMAIL) !== false && strlen($email) <= 200;
 }

@@ -14,7 +14,7 @@
       $error = 'Your session expired. Please try again.';
     } else {
       $result = contact_submit($_POST);
-      if (!empty($result['ok'])) { header('Location: contact.php?sent=1'); exit; }
+      if (!empty($result['ok'])) { header('Location: contact.php?sent=1&mail=' . urlencode(last_mail_status() ?: 'none')); exit; }
       $error  = $result['error'];
       $fields = $result['fields'] ?? array();
     }
@@ -70,7 +70,8 @@
         <!-- Contact Form: React (ContactForm) adds live validation; this plain form works without JavaScript -->
         <div data-island="contact-form" data-props="<?= island_props(array('reasons' => contact_reasons(), 'user' => public_user($user))) ?>">
 <?php if ($sent): ?>
-          <div class="notice notice--success" role="status">Thanks! Your message was sent. We'll get back to you soon.</div>
+          <div class="notice notice--success" role="status">Thanks! Your message was sent. We'll get back to you soon.
+            <?= ($_GET['mail'] ?? '') === 'sent' ? 'A confirmation email is on its way. If you don’t see it in a few minutes, check your Spam or Promotions folder.' : 'We couldn’t email a confirmation right now, but your message was received.' ?></div>
 <?php endif; ?>
 <?php if ($error): ?>
           <div class="notice notice--error" role="alert"><?= e($error) ?></div>

@@ -37,12 +37,20 @@ function current_user($refresh = false) {
   m9_session_start();
   if (empty($_SESSION['user_id'])) return null;
 
-  $stmt = db()->prepare('SELECT id, name, email, role, created_at, email_verified_at FROM users WHERE id = ?');
+  $stmt = db()->prepare('SELECT id, name, email, role, created_at, email_verified_at, session_version FROM users WHERE id = ?');
   $stmt->execute(array($_SESSION['user_id']));
   $user = $stmt->fetch() ?: null;
 
   /* Account was deleted while logged in */
-  if ($user === null) unset($_SESSION['user_id']);
+  if ($user === null) { unset($_SESSION['user_id']); return null; }
+
+  /* Password was changed or reset elsewhere: this older session is signed out */
+  if (!isset($_SESSION['sv'])) {
+    $_SESSION['sv'] = (int) $user['session_version'];   // sessions from before this check existed
+  } elseif ((int) $_SESSION['sv'] !== (int) $user['session_version']) {
+    unset($_SESSION['user_id'], $_SESSION['sv']);
+    $user = null;
+  }
   return $user;
 }
 
@@ -147,7 +155,15 @@ function log_in_user($userId) {
   m9_session_start();
   session_regenerate_id(true);
   $_SESSION['user_id'] = $userId;
+  $version = db()->prepare('SELECT session_version FROM users WHERE id = ?');
+  $version->execute(array($userId));
+  $_SESSION['sv'] = (int) $version->fetchColumn();
   unset($_SESSION['csrf']);   // fresh token for the new session
+}
+
+/* Call after a password change/reset: every other signed-in device is signed out */
+function sign_out_other_sessions($userId) {
+  db()->prepare('UPDATE users SET session_version = session_version + 1 WHERE id = ?')->execute(array($userId));
 }
 
 function log_out_user() {

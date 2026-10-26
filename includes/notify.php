@@ -94,3 +94,13 @@ function notify_newsletter_signup($email, $token) {
     ),
   ));
 }
+
+/* "Forgot your password?" email (sent only to the account owner) */
+function notify_password_reset($user, $token) {
+  $link = site_url('reset-password.php?token=' . $token);
+  send_mail_batch(array(array(
+    'to'      => $user['email'],
+    'subject' => 'Reset your Maroon 9 password',
+    'body'    => 'Hi ' . strtok($user['name'], ' ') . ",\n\nWe received a request to reset the password for your Maroon 9 account. Choose a new password here:\n\n$link\n\nThis link works once and expires in " . M9_RESET_MINUTES . " minutes. If you didn't ask to reset your password, you can ignore this email; your password won't change." . email_footer(),
+  )));
+}

@@ -1,6 +1,6 @@
 /* Volunteer sign-up form, used on Get Involved and in My Account */
 import { api } from '../api.js';
-import { CheckboxGroup, Field, Notice, formatTimestamp, useForm } from './ui.jsx';
+import { CheckboxGroup, Field, Notice, emailNote, formatTimestamp, useForm } from './ui.jsx';
 
 export const VOLUNTEER_INTERESTS = [
   'Events & performances', 'Backstage & costumes', 'Mentoring youth', 'Teaching artist support',
@@ -19,16 +19,18 @@ export default function VolunteerForm({ volunteer, onSaved }) {
 
   const save = async (event) => {
     event.preventDefault();
+    let sentEmail = null;
     const ok = await form.submit(
       async (v) => {
         const data = await api.post('account', 'volunteer', {
           interests: v.interests.join(', '), availability: v.availability.join(', '), notes: v.notes,
         });
+        sentEmail = data.email;
         onSaved(data);
       },
       { validate: (v) => ({ interests: v.interests.length === 0 && 'Choose at least one way to help.' }) },
     );
-    if (ok) form.setMessage({ type: 'success', text: volunteer ? 'Your volunteer details were updated.' : 'Thanks for signing up! Our team will reach out soon.' });
+    if (ok) form.setMessage({ type: 'success', text: `${volunteer ? 'Your volunteer details were updated.' : 'Thanks for signing up! Our team will reach out soon.'} ${emailNote(sentEmail)}` });
   };
 
   const withdraw = async () => {
