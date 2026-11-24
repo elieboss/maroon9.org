@@ -42,7 +42,7 @@ The site sends:
 - for every completed form (sign-up, contact, youth enrollment, volunteer sign-up, event registration):
   a **receipt** to the person and a **"Form completed" notification** to the Maroon 9 inbox.
 
-Emails are sent through Gmail as `eliebossombo@gmail.com`. One-time setup:
+Emails are sent through Gmail as `eliebossombo@gmail.com`; notifications go to `info@maroon9.org`. One-time setup:
 
 1. Turn on 2-Step Verification for that Google account.
 2. Create an app password at https://myaccount.google.com/apppasswords.
@@ -52,7 +52,7 @@ Settings are saved in `includes/mail-config.php` (private, git-ignored). Until t
 saved as files in `data/mail-log/` instead of being sent, and `data/mail.log` records every attempt.
 A mail problem never blocks a form; the message is kept in `data/mail-log/`.
 
-The address shown on the Contact page (info@maroon9org.com) is display text only.
+The address shown on the Contact page (info@maroon9.org) is display text only.
 
 ## Deploying
 

@@ -24,7 +24,7 @@ function mail_config() {
     'password'    => '',                  // Gmail app password
     'from_email'  => 'eliebossombo@gmail.com',
     'from_name'   => 'Maroon 9',
-    'notify_to'   => 'eliebossombo@gmail.com',
+    'notify_to'   => 'info@maroon9.org',
     'site_url'    => '',                  // e.g. https://maroon9.example.org (blank = detect)
   );
   $file = getenv('M9_MAIL_CONFIG') ?: __DIR__ . '/mail-config.php';

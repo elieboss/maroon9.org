@@ -48,7 +48,7 @@
 
           <div class="contact-info__item">
             <div class="contact-info__label">Email</div>
-            <div class="contact-info__value">info@maroon9org.com</div>
+            <div class="contact-info__value">info@maroon9.org</div>
           </div>
 
           <div class="contact-info__item">
