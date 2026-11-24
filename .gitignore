@@ -5,6 +5,9 @@ data/*.sqlite-*
 includes/mail-config.php
 data/mail-log/
 data/mail.log
+# Gallery uploads from staff (photos/videos) and unfinished upload pieces
+uploads/
+data/upload-tmp/
 frontend/node_modules/
 .DS_Store
 _site/

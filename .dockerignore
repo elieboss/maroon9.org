@@ -1,5 +1,7 @@
 data/*.sqlite*
 data/mail-log/
+data/upload-tmp/
+uploads/
 includes/mail-config.php
 frontend/node_modules/
 _site/

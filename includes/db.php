@@ -31,6 +31,8 @@ function db() {
 }
 
 function db_migrate(PDO $pdo) {
+  $hadGallery = (bool) $pdo->query("SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = 'gallery_media'")->fetchColumn();
+
   $pdo->exec("
     CREATE TABLE IF NOT EXISTS users (
       id            INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -117,7 +119,24 @@ function db_migrate(PDO $pdo) {
       created_at   TEXT NOT NULL DEFAULT (datetime('now')),
       updated_at   TEXT NOT NULL DEFAULT (datetime('now'))
     );
+
+    CREATE TABLE IF NOT EXISTS gallery_media (
+      id          INTEGER PRIMARY KEY AUTOINCREMENT,
+      kind        TEXT NOT NULL CHECK (kind IN ('photo', 'video')),
+      path        TEXT NOT NULL,
+      thumb       TEXT NOT NULL DEFAULT '',
+      mime        TEXT NOT NULL DEFAULT '',
+      caption     TEXT NOT NULL DEFAULT '',
+      uploaded_by INTEGER REFERENCES users(id) ON DELETE SET NULL,
+      created_at  TEXT NOT NULL DEFAULT (datetime('now'))
+    );
   ");
+
+  /* Fill the gallery with the site's own photos the first time (staff can remove them) */
+  if (!$hadGallery) {
+    require_once __DIR__ . '/gallery-data.php';
+    gallery_seed($pdo);
+  }
 
   /* Columns added after the first release: email confirmation */
   $columns = array_column($pdo->query('PRAGMA table_info(users)')->fetchAll(), 'name');

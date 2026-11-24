@@ -58,6 +58,31 @@ export const api = {
   post: (endpoint, action, body = {}) => request(endpoint, { method: 'POST', body: { action, ...body } }),
 };
 
+/* Send raw bytes (one piece of a gallery upload) with the CSRF header */
+export async function postBytes(endpoint, params, blob) {
+  const url = new URL(`api/${endpoint}.php`, document.baseURI);
+  Object.entries(params).forEach(([key, value]) => url.searchParams.set(key, value));
+  let response;
+  try {
+    response = await fetch(url, {
+      method: 'POST',
+      headers: { Accept: 'application/json', 'Content-Type': 'application/octet-stream', 'X-CSRF-Token': boot.csrf },
+      credentials: 'same-origin',
+      body: blob,
+    });
+  } catch {
+    throw new ApiError('The upload was interrupted. Check your connection and try again.', 0);
+  }
+  let data;
+  try {
+    data = await response.json();
+  } catch {
+    throw new ApiError('The server sent an unexpected response. Please try again.', response.status);
+  }
+  if (!response.ok) throw new ApiError(data.error || 'Something went wrong.', response.status);
+  return data;
+}
+
 export async function logOut() {
   try {
     await api.post('auth', 'logout');

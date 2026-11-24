@@ -14,6 +14,7 @@ import { initPasswordToggles } from './passwordToggles.js';
 const islands = {
   'site-nav': lazy(() => import('./components/SiteNav.jsx')),
   gallery: lazy(() => import('./components/Gallery.jsx')),
+  'gallery-uploader': lazy(() => import('./components/GalleryUploader.jsx')),
   'events-board': lazy(() => import('./components/EventsBoard.jsx')),
   'contact-form': lazy(() => import('./components/ContactForm.jsx')),
   'sponsor-marquee': lazy(() => import('./components/SponsorMarquee.jsx')),

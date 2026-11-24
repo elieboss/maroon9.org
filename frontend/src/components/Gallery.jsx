@@ -45,7 +45,7 @@ export default function Gallery({ images, className = 'photo-grid' }) {
             onClick={() => open(i)}
             aria-label={`View larger: ${image.alt}`}
           >
-            <img src={image.src} alt={image.alt} className="photo-grid__image" loading="lazy" />
+            <img src={image.thumb || image.src} alt={image.alt} className="photo-grid__image" loading="lazy" />
           </button>
         ))}
       </div>

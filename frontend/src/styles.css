@@ -858,3 +858,54 @@ button.event-card__cta {
 }
 
 .success-panel .success-panel__email { font-size: 0.88rem; }
+
+/* ---------- Staff dashboard: Gallery tab ---------- */
+.gallery-uploader { margin-bottom: 24px; }
+
+.dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 32px 20px;
+  border: 2px dashed rgba(123, 28, 35, 0.35);
+  border-radius: 10px;
+  background: var(--off-white);
+  text-align: center;
+  cursor: pointer;
+  transition: border-color var(--transition), background var(--transition);
+}
+.dropzone strong { color: var(--maroon); font-size: 1.05rem; }
+.dropzone span { color: var(--gray); font-size: 0.88rem; max-width: 520px; }
+.dropzone:hover,
+.dropzone--over { border-color: var(--maroon); background: #fff; }
+.dropzone:focus-within { outline: 3px solid var(--gold); outline-offset: 2px; }
+.dropzone--busy { cursor: progress; opacity: 0.75; }
+
+.upload-list { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 8px; }
+.upload-list__item { padding: 10px 14px; border-radius: 8px; background: var(--off-white); }
+.upload-list__item--done { background: #eef7ee; }
+.upload-list__item--error { background: #fbeeee; }
+.upload-list__row { display: flex; justify-content: space-between; gap: 12px; font-size: 0.9rem; }
+.upload-list__name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 600; }
+.upload-list__status { flex: none; color: var(--gray); }
+.upload-list__bar { width: 100%; height: 6px; margin-top: 8px; accent-color: var(--maroon); }
+.upload-list .field-error { margin: 6px 0 0; }
+
+.media-grid {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+.media-card { background: #fff; border: 1px solid var(--light-gray); border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; }
+.media-card__preview { aspect-ratio: 4 / 3; background: var(--black); }
+.media-card__preview img,
+.media-card__preview video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.media-card__preview video { object-fit: contain; }
+.media-card__body { padding: 12px; display: grid; gap: 6px; }
+.media-card__body input { width: 100%; padding: 8px 10px; border: 1px solid var(--light-gray); border-radius: 6px; font: inherit; font-size: 0.9rem; }
+.media-card__body .item-list__meta { margin: 0; }
+.media-card__actions { display: flex; gap: 14px; flex-wrap: wrap; }

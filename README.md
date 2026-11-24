@@ -82,10 +82,30 @@ variables in its dashboard:
 | `M9_SMTP_PASSWORD` | the 16-letter Gmail app password                   |
 | `M9_SITE_URL`      | the site's public address, e.g. `https://….onrender.com` |
 | `M9_DB_PATH`       | a file on a persistent disk, e.g. `/data/maroon9.sqlite` |
+| `M9_UPLOADS_DIR`   | a folder on the same disk for Gallery uploads, e.g. `/data/uploads` |
 
 Without a persistent disk, the database (accounts, messages, sign-ups) is
 wiped whenever the host restarts the service. After the first deploy, create
 the staff account from the host's shell with `php bin/create-staff.php`.
+
+## Gallery page
+
+`gallery.php` shows photos and videos. Staff add them from **Staff Dashboard →
+Gallery**: choose or drag in files, add an optional caption, and they appear on
+the page right away. Captions can be edited and items removed from the same tab.
+
+- Staff can also upload from the panel on the Gallery page itself. Photos need PHP's GD
+  extension; without it photo uploads are refused.
+- Photos: JPG, PNG, WebP, GIF or AVIF, up to 25 MB. They're saved as resized
+  WebP copies, which also strips camera data such as GPS location. iPhone HEIC
+  photos need exporting as JPEG first. GIFs and videos are stored as uploaded, so
+  any location data in a video stays in it.
+- Videos: MP4 (plays everywhere), WebM or MOV, up to 500 MB.
+- Files are uploaded in 2 MB pieces, so no PHP upload settings need changing.
+- Uploads are saved in `uploads/gallery/`, which is not in git. Back that folder
+  up along with `data/` if you move the site.
+- The gallery starts with the site's existing stage photos and intro video;
+  their thumbnails are in `images/gallery-thumbs/`.
 
 ## Editing the React parts
 

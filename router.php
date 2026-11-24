@@ -18,7 +18,25 @@ if (preg_match('#^/(data|includes|bin|frontend|node_modules)(/|$)#', $path) || p
 /* The dev server ignores Range requests, and Safari/iOS won't play video
    without them, so serve video files here with partial-content support */
 if (preg_match('#^/images/[^/]+\.(mp4|webm|mov)$#i', $path, $m) && is_file(__DIR__ . $path)) {
-  serve_video(__DIR__ . $path, strtolower($m[1]));
+  $types = array('mp4' => 'video/mp4', 'webm' => 'video/webm', 'mov' => 'video/quicktime');
+  serve_media(__DIR__ . $path, $types[strtolower($m[1])]);
+  return true;
+}
+
+/* Gallery uploads: only photos and videos are served, nothing else (no scripts).
+   Served here because M9_UPLOADS_DIR may sit outside the site folder. */
+if (strpos($path, '/uploads/') === 0) {
+  require_once __DIR__ . '/includes/gallery-data.php';
+  $file = M9_UPLOADS_DIR . substr($path, 8);
+  $ext  = strtolower(pathinfo($path, PATHINFO_EXTENSION));
+  $types = array('jpg' => 'image/jpeg', 'png' => 'image/png', 'webp' => 'image/webp', 'avif' => 'image/avif',
+                 'gif' => 'image/gif', 'mp4' => 'video/mp4', 'webm' => 'video/webm', 'mov' => 'video/quicktime');
+  if (!isset($types[$ext]) || strpos($path, '..') !== false || !is_file($file)) {
+    http_response_code(404);
+    echo 'Not found';
+    return true;
+  }
+  serve_media($file, $types[$ext]);
   return true;
 }
 
@@ -30,13 +48,13 @@ if ($path === '/') {
 /* Let the dev server handle real files (.php pages, css, images, assets) */
 return false;
 
-function serve_video($file, $ext) {
-  $types = array('mp4' => 'video/mp4', 'webm' => 'video/webm', 'mov' => 'video/quicktime');
+function serve_media($file, $type) {
   $size  = filesize($file);
   $start = 0;
   $end   = $size - 1;
 
-  header('Content-Type: ' . $types[$ext]);
+  header('Content-Type: ' . $type);
+  header('X-Content-Type-Options: nosniff');
   header('Accept-Ranges: bytes');
   header('Cache-Control: public, max-age=86400');
 

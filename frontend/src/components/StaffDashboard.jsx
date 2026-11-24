@@ -1,9 +1,10 @@
-/* Staff dashboard: contact messages, events, sign-ups, and user/staff management */
+/* Staff dashboard: contact messages, events, sign-ups, gallery, and user/staff management */
 import { useEffect, useMemo, useState } from 'react';
+import GalleryAdmin from './GalleryAdmin.jsx';
 import { api } from '../api.js';
 import { Badge, Field, Notice, Spinner, TabPanel, Tabs, downloadCsv, formatDate, formatTimestamp, useForm } from './ui.jsx';
 
-const TABS = ['messages', 'events', 'signups', 'users'];
+const TABS = ['messages', 'events', 'signups', 'gallery', 'users'];
 const REASON_LABELS = { enroll: 'Enroll a Youth', volunteer: 'Volunteer', donate: 'Donate', sponsor: 'Sponsor', other: 'Other', '': 'General' };
 
 function Messages({ messages, act }) {
@@ -376,6 +377,7 @@ export default function StaffDashboard({ me }) {
           { id: 'messages', label: 'Messages', count: newMessages },
           { id: 'events', label: 'Events' },
           { id: 'signups', label: 'Sign-ups', count: newEnrollments },
+          { id: 'gallery', label: 'Gallery' },
           { id: 'users', label: 'Users & Staff' },
         ]}
       />
@@ -384,6 +386,7 @@ export default function StaffDashboard({ me }) {
         {tab === 'messages' && <Messages messages={data.messages} act={act} />}
         {tab === 'events' && <EventsAdmin events={events} setEvents={(next) => { setEvents(next); api.get('staff').then(setData, () => {}); }} />}
         {tab === 'signups' && <Signups data={data} act={act} />}
+        {tab === 'gallery' && <GalleryAdmin />}
         {tab === 'users' && <Users users={data.users} me={me} act={act} />}
       </TabPanel>
     </div>

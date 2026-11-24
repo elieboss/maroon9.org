@@ -33,6 +33,7 @@ function nav_items() {
     array('label' => 'Arts Education Services', 'href' => 'pagetostage.php'),
     array('label' => 'Sickle Cell Stars', 'href' => 'sicklecellstars.php'),
     array('label' => 'Events', 'href' => 'events.php'),
+    array('label' => 'Gallery', 'href' => 'gallery.php'),
     array('label' => 'Get Involved', 'href' => 'getinvolved.php'),
     array('label' => 'Give', 'href' => 'give.php'),
   );

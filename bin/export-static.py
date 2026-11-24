@@ -22,7 +22,7 @@ OUT = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else ROOT / '_site'
 
 PAGES = [
     'index', 'about', 'programs', 'conflictresolutionthroughtheatre', 'kidsactingwithpurpose',
-    'pagetostage', 'sicklecellstars', 'hub', 'impact', 'events', 'getinvolved', 'give',
+    'pagetostage', 'sicklecellstars', 'hub', 'impact', 'events', 'gallery', 'getinvolved', 'give',
     'contact', 'login', 'register', 'staff-login', 'forgot-password',
 ]
 # Pages that need the PHP backend; links to them go to the matching login page
@@ -71,7 +71,11 @@ def main():
 
     for d in COPY_DIRS:
         shutil.copytree(ROOT / d, OUT / d, ignore=shutil.ignore_patterns('.DS_Store'))
-    for js in (OUT / 'assets').glob('*.js'):
+    # Photos and videos staff added to the Gallery page (no .htaccess or other files)
+    if (ROOT / 'uploads' / 'gallery').is_dir():
+        shutil.copytree(ROOT / 'uploads' / 'gallery', OUT / 'uploads' / 'gallery',
+                        ignore=shutil.ignore_patterns('.*'))
+    for js in (OUT / 'assets').rglob('*.js'):
         js.write_text(rewrite_links(js.read_text(encoding='utf-8')), encoding='utf-8')
 
     for page in PAGES:
