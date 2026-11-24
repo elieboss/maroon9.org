@@ -43,6 +43,7 @@
         <input type="hidden" name="csrf" value="<?= e(csrf_token()) ?>" />
         <input type="hidden" name="token" value="<?= e($token) ?>" />
         <input type="hidden" name="username" value="<?= e($reset['email']) ?>" autocomplete="username" />
+        <div class="password-field" data-password-toggle>
         <div class="form-group<?= isset($fields['password']) ? ' has-error' : '' ?>">
           <label for="new-password">New Password</label>
           <input type="password" id="new-password" name="password" autocomplete="new-password" minlength="8" required autofocus aria-describedby="new-password-hint" />
@@ -52,12 +53,15 @@
           <p class="field-hint" id="new-password-hint">At least 8 characters.</p>
 <?php endif; ?>
         </div>
+        </div>
+        <div class="password-field" data-password-toggle>
         <div class="form-group<?= isset($fields['confirm']) ? ' has-error' : '' ?>">
           <label for="confirm-password">Confirm New Password</label>
           <input type="password" id="confirm-password" name="confirm" autocomplete="new-password" required />
 <?php if (isset($fields['confirm'])): ?>
           <p class="field-error"><?= e($fields['confirm']) ?></p>
 <?php endif; ?>
+        </div>
         </div>
         <button type="submit" class="btn btn-maroon btn-block">Save New Password</button>
       </form>

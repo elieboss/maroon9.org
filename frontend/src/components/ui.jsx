@@ -17,6 +17,24 @@ export function Field({ label, error, hint, as: Tag = 'input', children, ...prop
   );
 }
 
+/* Password input with a Show/Hide button */
+export function PasswordField({ label, ...props }) {
+  const [visible, setVisible] = useState(false);
+  return (
+    <div className="password-field">
+      <Field label={label} {...props} type={visible ? 'text' : 'password'} autoCapitalize="none" autoCorrect="off" spellCheck={false} />
+      <button
+        type="button"
+        className="password-field__toggle"
+        aria-label={`${visible ? 'Hide' : 'Show'} ${label.toLowerCase()}`}
+        onClick={() => setVisible(!visible)}
+      >
+        {visible ? 'Hide' : 'Show'}
+      </button>
+    </div>
+  );
+}
+
 export function CheckboxGroup({ legend, options, value, onChange, error }) {
   const toggle = (option) =>
     onChange(value.includes(option) ? value.filter((v) => v !== option) : [...value, option]);

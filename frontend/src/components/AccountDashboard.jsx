@@ -1,7 +1,7 @@
 /* My Account: overview, event registrations, youth enrollment, volunteering, profile */
 import { useEffect, useState } from 'react';
 import { api, logOut } from '../api.js';
-import { Badge, Field, Notice, Spinner, TabPanel, Tabs, emailNote, formatDate, formatTimestamp, isEmail, todayIso, useForm } from './ui.jsx';
+import { Badge, Field, Notice, PasswordField, Spinner, TabPanel, Tabs, emailNote, formatDate, formatTimestamp, isEmail, todayIso, useForm } from './ui.jsx';
 import VolunteerForm from './VolunteerForm.jsx';
 
 const TABS = ['overview', 'events', 'enroll', 'volunteer', 'profile'];
@@ -236,9 +236,9 @@ function Profile({ data, setData }) {
       <form className="panel" onSubmit={savePassword} noValidate>
         <h3 className="panel-title">Change password</h3>
         <Notice type={password.message?.type}>{password.message?.text}</Notice>
-        <Field label="Current password" type="password" autoComplete="current-password" {...password.bind('current_password')} error={password.errors.current_password} />
-        <Field label="New password" type="password" autoComplete="new-password" hint="At least 8 characters." {...password.bind('new_password')} error={password.errors.new_password} />
-        <Field label="Confirm new password" type="password" autoComplete="new-password" {...password.bind('confirm')} error={password.errors.confirm} />
+        <PasswordField label="Current password" autoComplete="current-password" {...password.bind('current_password')} error={password.errors.current_password} />
+        <PasswordField label="New password" autoComplete="new-password" hint="At least 8 characters." {...password.bind('new_password')} error={password.errors.new_password} />
+        <PasswordField label="Confirm new password" autoComplete="new-password" {...password.bind('confirm')} error={password.errors.confirm} />
         <button type="submit" className="btn btn-maroon" disabled={password.busy}>{password.busy ? 'Saving…' : 'Change Password'}</button>
         <hr className="panel__divider" />
         <button type="button" className="btn btn-outline btn-outline--dark" onClick={logOut}>Sign Out</button>

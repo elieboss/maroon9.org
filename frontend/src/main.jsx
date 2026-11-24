@@ -8,6 +8,7 @@ import { lazy, Suspense, StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './styles.css';
 import { initPageEffects } from './effects.js';
+import { initPasswordToggles } from './passwordToggles.js';
 
 /* Dashboards are only loaded on the pages that use them */
 const islands = {
@@ -74,3 +75,4 @@ function mountIslands() {
 
 mountIslands();
 initPageEffects();
+initPasswordToggles();
